@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-<h1>Hello Axper jan</h1>
+
     @include('includes.WelcoomSlid')
     @include('includes.service')
     <!--Shopping-->
