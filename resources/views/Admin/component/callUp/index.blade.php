@@ -21,9 +21,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($call as $calls)
+                            @foreach($call as $k=>$calls)
                                 <tr>
-                                    <th scope="row">{{$calls->id}}</th>
+                                    <th scope="row">{{$k+1}}</th>
                                     <td>{{$calls->name??"-"}}</td>
                                     <td>{{$calls->phone}}</td>
                                     <td>{{$calls->type_id}}</td>

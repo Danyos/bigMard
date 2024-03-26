@@ -14,6 +14,7 @@ class CallUpCenterRequestController extends Controller
     public function index()
     {
         $call=CallupModel::orderBy('id','desc')->get();
+
         return view('Admin.component.callUp.index', [
             'call' => $call
         ]);

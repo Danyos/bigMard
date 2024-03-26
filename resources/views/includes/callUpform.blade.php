@@ -12,7 +12,7 @@
 
 
                 <input type="hidden" name="item_id" class="form-control"
-                       id="item_id" placeholder="Enter your name">
+                       id="item_id" value="{{isset($item->id)?$item->id:''}}" placeholder="Enter your name">
                 <strong class="error nameError"></strong>
             </div>
         </div>
