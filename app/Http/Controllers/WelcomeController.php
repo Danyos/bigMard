@@ -8,6 +8,7 @@ use App\Models\Item\ItemOtherInformate;
 use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class WelcomeController extends Controller
@@ -15,26 +16,22 @@ class WelcomeController extends Controller
     public function index()
     {
         $shouldShowHeaderAndFooter = true;
+        $item=ItemModel::with(['ItemGallery'])->orderBy('id','desc')->get();
 
-        return view('welcome', compact('shouldShowHeaderAndFooter'));
+        return view('welcome', compact('shouldShowHeaderAndFooter',
+            'item'));
     }
 
     public function show($code)
     {
-        $shouldShowHeaderAndFooter = true;
-        try {
-            if (!$code || !decrypt($code)) {
-                abort('404');
-            }
-            $item = ItemModel::find(decrypt($code));
+
+            $item = ItemModel::find($code);
             $feedback = FeedbackModel::where('status','active')->where('item_id',$item->id)->get();
             $itemGallery = ItemGalleriesModel::where('item_id', $item->id)->get();
             $other = ItemOtherInformate::where('item_id', $item->id)->first();
 
-            return view('Item.index', compact('item', 'itemGallery', 'other', 'shouldShowHeaderAndFooter','feedback'));
-        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            return view('Item.index', compact('item', 'itemGallery', 'other','feedback'));
 
-        }
     }
 
     public function popup($code)
@@ -67,6 +64,7 @@ class WelcomeController extends Controller
                 ->withInput();
         }
         FeedbackModel::create($request->all());
+        Session::flash('success', 'Feedback submitted successfully.');
         return back();
 
     }
@@ -74,12 +72,21 @@ class WelcomeController extends Controller
 
     public function register(Request $request){
 
-
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'regex:/^([A-Za-z]+|[Ա-Ֆա-ֆ]+)(?: ([A-Za-z]+|[Ա-Ֆա-ֆ]+))?$/'],
+            'phone' => ['required', 'string', 'regex:/^(?:\+\d+)?[\d\s-]+$/'],
+            'item_id' => ['required', 'string'], // Adjust rules for item ID as needed
+        ], [
+            'name.regex' => 'The name field should only contain letters.',
+            'phone.regex' => 'The phone number field should only contain numbers, without spaces or special characters.',
+            // Add custom error messages for other rules if needed
+        ]);
 
         CallupModel::create([
             'type_id'=>$request->type_id,
             'item_id'=>$request->item_id,
             'phone'=>$request->phone,
+            'name'=>$request->name,
         ]);
         return back();
     }

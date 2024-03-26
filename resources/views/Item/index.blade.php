@@ -87,14 +87,12 @@
             </div>
             <div class="bg-blue title-wrap">
                 <div class="row">
-                    <!--<div class="col-lg-12 col-md-12 whitecolor">-->
-                    <!--    <h3 class="float-left">Coming Soon</h3>-->
-                    <!--    <ul class="breadcrumb top10 bottom10 float-right">-->
-                    <!--        <li class="breadcrumb-item hover-light"><a href="./index.html">Home</a></li>-->
-                    <!--        <li class="breadcrumb-item hover-light">Page</li>-->
-                    <!--    </ul>-->
-
-                    <!--</div>-->
+                    <div class="col-lg-12 col-md-12 whitecolor">
+                        <h3 class="float-left">{{$item->name}}</h3>
+                        <ul class="breadcrumb top10 bottom10 float-right">
+                            <li class="breadcrumb-item hover-light"><a href="{{route('Homeindex')}}">Գլխավոր</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,12 +105,13 @@
                 <div class="row">
                     <!-- NOTE: The Id of both of below tags should be same as below-->
                     <!-- shop-dual-carousel -->
+
                     <div class="col-lg-5 col-md-5 col-sm-12   heading-space" id="shop-dual-carousel">
                         <!-- syncCarousel -->
                         <div class="owl-carousel carousel-shop-detail owl-theme" id="syncCarousel">
                             <!--Item 1-->
                             @foreach($item->ItemGalleries as $items)
-                                <div class="item" wire:key="product-{{ $items->id }}">
+                                <div class="item" >
                                     @if (!(\Illuminate\Support\Carbon::parse($item->auction_end_time) <= \Illuminate\Support\Carbon::now()))
                                         @if($item->discount)
                                             <div class="discounts" style="transform: rotate(90deg)"><span>{{$item->discount}}%</span></div>
@@ -173,8 +172,8 @@
                         <div class="row callmealltoaction" style="padding-top: 35px">
                             <div class="col-md-8 mt-1">
 
-                                <livewire:call-number-input type_id="3-1" item_id="{{$item->id}}"/>
-
+{{--                                <livewire:call-number-input type_id="3-1" item_id="{{$item->id}}"/>--}}
+                                @include('includes.callUpform')
                             </div>
                         </div>
                     </div>
@@ -284,7 +283,9 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <div id="result1"></div>
+                                <div id="result1">
+
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -371,9 +372,10 @@
                         </ul>
                     </div>
                     <h4 class="font-light py-5 mt-3 line-height-17">Բոլոր ապրանքները անցել են փորձաքննությունները և սերտիֆիկացված են</h4>
-                    <livewire:call-number-input type_id="3-2" item_id="{{$item->id}}"/>
+{{--                    @include('includes.callUpform')--}}
+                    <livewire:call-number-input type_id="3-1" item_id="{{$item->id}}"/>
 
-                 
+
                 </div>
             </div>
         </div>

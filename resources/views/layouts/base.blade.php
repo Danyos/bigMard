@@ -60,7 +60,7 @@
   src="https://www.facebook.com/tr?id=1488224861932448&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-     
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -93,7 +93,7 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
 <!-- header -->
 
 @yield('content')
-@if ($shouldShowHeaderAndFooter)
+
 <!-- Counters -->
 <section class="padding bg-shop-quote">
     <div class=""></div>
@@ -101,43 +101,21 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
         <div class="row align-items-center text-center">
             <div class="col-md-8 m-auto">
                 <div class="quote-wrapper">
-                   
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Counters ends-->
-
-<!-- Contact US -->
-<section id="stayconnect" class=" position-relative">
-    <div class="container">
-        <div class="contactus-wrapp shadow-equal">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="heading-title wow fadeInUp text-center text-md-left" data-wow-delay="300ms">
-                        <h3 class="darkcolor bottom20 text-center">Պատվիրել հիմա</h3>
-                    </div>
-                </div>
-
-                <div class="col-md-8 col-sm-12 m-auto">
-                   <livewire:call-number-input type_id="1-2" item_id={{null}} />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Contact US ends -->
-
     <footer id="site-footer" class=" bgprimary padding_top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_panel padding_bottom_half bottom20">
-                        <a href="#" class="footer_logo bottom25"><img src="{{asset('assets/images/BigMard-preview.png')}}" alt="BigMardAccess"></a>
+                        <a href="{{route('Homeindex')}}" class="footer_logo bottom25"><img src="{{asset('assets/images/BigMard-preview.png')}}" alt="BigMardAccess"></a>
                         <div class="d-table w-100 address-item whitecolor bottom25">
 
-                            
+
                         </div>
 
 
@@ -154,7 +132,7 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
 
                         </div>
                         <!--<ul class="social-icons white wow fadeInUp" data-wow-delay="300ms">-->
-                 
+
                         <!--</ul>-->
 
                     </div>
@@ -176,7 +154,7 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
                         </p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="footer-item">
@@ -187,7 +165,7 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
             </div>
         </div>
     </footer>
-@endif
+
 
 <!--Site Footer Here-->
 
@@ -227,9 +205,68 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
 <script src="{{asset('assets/vendor/js/extensions/revolution.extension.video.min.js')}}"></script>
 <!--custom functions and script-->
 <script src="{{asset('assets/js/functions.js')}}"></script>
-<script src="{{asset('js/app.js')}}"></script>
-<livewire:scripts/>
 
 @yield('js')
+   <script>
+       $('.orderBtn').click(function (){
+           //               <div>${this.dataset.desc}</div>
+
+           $('#exampleModalLabel').html(`
+               ${this.dataset.title}
+
+
+            `)
+           $('.moreModal').attr('href','item/'+this.dataset.id)
+           $('#item_id').val(this.dataset.id)
+
+
+       })
+
+       document.getElementById('formsubmit').addEventListener('submit', function (event) {
+           event.preventDefault(); // Prevent the default form submission
+
+           const armenianPhoneNumberRegex = /^(?:\+\d+)?[\d\s-]+$/;
+           const fullNameRegex = /^([A-Za-z]+|[Ա-Ֆա-ֆ]+)(?: ([A-Za-z]+|[Ա-Ֆա-ֆ]+))?$/;
+
+           const isValid = armenianPhoneNumberRegex.test(document.getElementById('inputPhone').value);
+           const isValidName = fullNameRegex.test(document.getElementById('inputName').value);
+
+           if (!isValid) {
+               document.querySelector('.phoneError').innerHTML = 'Սխալ: Հեռախոսահամարը պետք է պարունակի միայն թվեր, առանց նշանների, ու առանց բացատների';
+           } else {
+               document.querySelector('.phoneError').innerHTML = '';
+           }
+
+           if (!isValidName) {
+               document.querySelector('.nameError').innerHTML = 'Սխալ: Անունը և ազգանունը պետք է պարունակեն միայն տառեր:.';
+           } else {
+               document.querySelector('.nameError').innerHTML = '';
+           }
+           if (isValid && isValidName) {
+               document.querySelector('.alert-success').classList.remove('d-none')
+           }else{
+               return
+           }
+           setTimeout(()=>{
+
+
+               // If input is valid, submit the form
+               this.submit();
+
+           },1000)
+       });
+
+       $('#exampleModal').on('hidden.bs.modal', function() {
+           // Call your function here
+           myFunction();
+       });
+
+       function myFunction(){
+           $('.phoneError').html('');
+           $('.nameError').html('');
+           $('#inputName').val('')
+           $('#inputPhone').val('')
+       }
+   </script>
 </body>
 </html>

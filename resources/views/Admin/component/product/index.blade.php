@@ -74,7 +74,7 @@ format('Y-m-d\TH:i'):"-"}}
                                             </div>
                                             <a href="{{route('admin.product.edit',$products->id)}}" class="btn btn-outdivne-primary">Edit</a>
                                             <a href="{{route('admin.product.show',$products->id)}}" class="btn btn-outdivne-primary">View</a>
-                                            <a href="{{route('item.show',encrypt($products->id))}}" target="_blank"
+                                            <a href="{{route('item.show',$products->id)}}" target="_blank"
                                                class="btn btn-outdivne-primary">go page</a>
                                             <form action="{{route('admin.product.destroy',$products->id)}}" method="post" style="display: inline">
                                                 @csrf

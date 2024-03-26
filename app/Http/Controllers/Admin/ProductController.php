@@ -153,9 +153,11 @@ $category=CategoryModel::get();
     public function show($id)
     {
 
+
         $item = ItemModel::find($id);
         $itemGallery = ItemGalleriesModel::where('item_id', $id)->get();
         $other = ItemOtherInformate::where('item_id', $id)->first();
+
         if(!$other){
             ItemOtherInformate::create([
                 'item_id'=> $id

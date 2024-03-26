@@ -66,8 +66,11 @@ class CallUpCenterRequestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $call = CallupModel::findOrFail($id);
+        $call->delete();
+
+        return redirect()->back()->with('success', 'Item deleted successfully.');
     }
 }

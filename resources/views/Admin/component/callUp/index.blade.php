@@ -11,17 +11,20 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">type</th>
+                                <th scope="col">Type</th>
                                 <th scope="col">Product</th>
                                 <th scope="col">Status</th>
-                                  <th scope="col">dataTime</th>
+                                <th scope="col">DateTime</th>
+                                <th scope="col">Actions</th> <!-- Added Actions column for delete button -->
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($call as $calls)
                                 <tr>
                                     <th scope="row">{{$calls->id}}</th>
+                                    <td>{{$calls->name??"-"}}</td>
                                     <td>{{$calls->phone}}</td>
                                     <td>{{$calls->type_id}}</td>
                                     @if($calls->item_id)
@@ -34,11 +37,17 @@
                                         <form action="{{route('admin.callUp.update',$calls->id)}}" method="post" id="statusChange">
                                             @csrf
                                             @method('put')
+                                            <span class="badge" style="background: {{$calls->status==='active'?'green':'red'}}; color: white" onclick="document.getElementById('statusChange').submit()" >{{$calls->status==='active'?"viewed":"not viewed"}}</span>
                                         </form>
-                                        <span class="badge" style="background: {{$calls->status==='active'?'green':'red'}}; color: white" onclick="document.getElementById('statusChange').submit()" >{{$calls->status==='active'?"viewed":"not viewed"}}</span></td>
-                               
-                               
-                                  <td>{{$calls->created_at}}</td>
+                                    </td>
+                                    <td>{{$calls->created_at}}</td>
+                                    <td>
+                                        <form action="{{ route('admin.callUp.destroy', $calls->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
