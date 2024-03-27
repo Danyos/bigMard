@@ -2,7 +2,7 @@
 
     <div class="alert alert-danger msgCall" style="display: none">Խնդրում ենք լրացնել դաշտը</div>
         <div class="alert alert-success d-none alertSuccess" role="alert">
-            Շնորհակալություն Ձեզ հետ կապ կհաստաենք
+            Ձեր պատվերը ընդունված է!
         </div>
     <form class="form-group" action="{{route('item.reg')}}" method="post" onsubmit="onsubmitFunc(event)">
         @csrf
