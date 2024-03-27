@@ -21,6 +21,24 @@ class WelcomeController extends Controller
         return view('welcome', compact('shouldShowHeaderAndFooter',
             'item'));
     }
+    public function policy()
+    {
+
+        return view('page.PrivacyPolicy');
+    }
+   public function guarantee()
+    {
+
+        return view('page.guarantee');
+    }  public function payments()
+    {
+
+        return view('page.payments');
+    }public function delivery()
+    {
+
+        return view('page.delivery');
+    }
 
     public function show($code)
     {

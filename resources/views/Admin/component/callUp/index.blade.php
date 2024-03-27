@@ -23,7 +23,7 @@
                             <tbody>
                             @foreach($call as $k=>$calls)
                                 <tr>
-                                    <th scope="row">{{$k+1}}</th>
+                                    <th scope="row">{{$call->count()-$k}}</th>
                                     <td>{{$calls->name??"-"}}</td>
                                     <td>{{$calls->phone}}</td>
                                     <td>{{$calls->type_id}}</td>

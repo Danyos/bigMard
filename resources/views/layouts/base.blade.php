@@ -139,10 +139,13 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_panel padding_bottom_half bottom20 pl-0 pl-lg-5">
-                        <h4 class="whitecolor bottom25">Պայմաններ</h4>
-                        <p class="whitecolor bottom25">Վճարումներ</p>
-                        <p class="whitecolor bottom25">Առաքում</p>
-                        <p class="whitecolor bottom25">Երաշխիք</p>
+                        <h4 class="whitecolor bottom25"><a href="{{route('privacy.policy')}}">Պայմաններ</a></h4>
+                        <h4 class="whitecolor bottom25"><a href="{{route('privacy.guarantee')}}">Երաշխիք</a></h4>
+                        <h4 class="whitecolor bottom25"><a href="{{route('privacy.payments')}}">Վճարումներ</a></h4>
+                        <h4 class="whitecolor bottom25"><a href="{{route('privacy.delivery')}}">Առաքում</a></h4>
+
+
+
 
                     </div>
                 </div>
@@ -150,7 +153,7 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
                     <div class="footer_panel padding_bottom_half bottom20">
                         <h4 class="whitecolor bottom25">Աշխատանքային ժամ</h4>
                         <p class="whitecolor bottom25">
-                            Սպասարկման ժամեր 09։00-22։00
+                            Սպասարկման ժամեր 10։00-21։00
                         </p>
                     </div>
                 </div>

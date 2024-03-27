@@ -18,7 +18,7 @@
                     data-toggle="dropdown"
                 >
 							<span class="user-icon">
-								<img src="{{asset('admin/vendors/images/photo1.jpg')}}" alt="" />
+								<img src="{{asset('assets/logo/bigmard.jpg')}}" style="object-fit: cover" alt="" />
 							</span>
                     <span class="user-name">{{auth()->user()->name}}</span>
                 </a>

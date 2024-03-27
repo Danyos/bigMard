@@ -4,13 +4,15 @@
 
     @include('includes.WelcoomSlid')
     @include('includes.service')
+
     <section id="our-shop" class="padding_top padding_bottom_half">
+        <hr class="mb-5">
         <div class="container">
             <div class="row ">
                 <div class="col-md-12 text-center wow fadeIn  text-center heading-title" data-wow-delay="300ms">
 
-                    <span class="defaultcolor">Առցանց</span>
-                    <h2 class="darkcolor text-uppercase bottom30 heading-title-small">գնումները Հեշտացել է</h2>
+
+                    <h2 class="darkcolor text-uppercase bottom30 heading-title-small">գնումները Հեշտացել են</h2>
                     <div class="col-md-8 offset-md-2 heading_space">
                         <p>
                             Օգտակար և թրենդային ապրանքների լավագույն տեսականին:

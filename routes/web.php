@@ -20,6 +20,10 @@ Route::get('/clear', function() {
     return 'Routes cache cleared';
 });
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('Homeindex');
+Route::get('/privacy-policy', [App\Http\Controllers\WelcomeController::class, 'policy'])->name('privacy.policy');
+Route::get('/guarantee', [App\Http\Controllers\WelcomeController::class, 'guarantee'])->name('privacy.guarantee');
+Route::get('/payments', [App\Http\Controllers\WelcomeController::class, 'payments'])->name('privacy.payments');
+Route::get('/delivery', [App\Http\Controllers\WelcomeController::class, 'delivery'])->name('privacy.delivery');
 Route::get('/item/{slug}', [App\Http\Controllers\WelcomeController::class, 'show'])->name('item.show');
 Route::get('/popup/{slug}', [App\Http\Controllers\WelcomeController::class, 'popup'])->name('item.popup');
 Route::post('/feedback', [App\Http\Controllers\WelcomeController::class, 'feedback'])->name('item.feedback');

@@ -13,6 +13,10 @@
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item " aria-current="page">
+                                        <a onclick="window.history.back()"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumb-item " aria-current="page">
                                         <a href="{{route('admin.product.index')}}">Product</a>
                                     </li>
                                     <li class="breadcrumb-item active">
@@ -32,6 +36,7 @@
                                         <a href="{{route('item.show',encrypt($item->id))}}" target="_blank"
                                           >go page</a>
                                     </li>
+
                                 </ol>
                             </nav>
                         </div>
