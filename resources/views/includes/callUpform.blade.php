@@ -1,5 +1,6 @@
 <div class="alert alert-success d-none" role="alert">
-    Ձեր պատվերը ընդունված է!
+    <b>Շնորհակալություն!</b>
+    <i>Ձեր պատվերը ընդունված է!</i>
 </div>
 <form action="{{route('item.reg')}}" class="container-fluid" method="post" id="formsubmit"  onsubmit="handlePhoneNumberSubmit(event)">
     @csrf
