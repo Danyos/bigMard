@@ -78,6 +78,28 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+    <style>
+        .navbar {
+            background-color: #f8f9fa;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
    <noscript><img  style="display:none"

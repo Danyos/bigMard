@@ -91,8 +91,8 @@ class WelcomeController extends Controller
     public function register(Request $request){
 
         $validatedData = $request->validate([
-            'name' => ['required', 'string', 'regex:/^([A-Za-z]+|[Ա-Ֆա-ֆ]+)(?: ([A-Za-z]+|[Ա-Ֆա-ֆ]+))?$/'],
-            'phone' => ['required', 'string', 'regex:/^(?:\+\d+)?[\d\s-]+$/'],
+            'name' => ['required', 'string'],
+            'phone' => ['required', 'string'],
             'item_id' => ['required', 'string'], // Adjust rules for item ID as needed
         ], [
             'name.regex' => 'The name field should only contain letters.',
