@@ -15,6 +15,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
+
         $shouldShowHeaderAndFooter = true;
         $item=ItemModel::with(['ItemGallery'])->orderBy('id','desc')->get();
 

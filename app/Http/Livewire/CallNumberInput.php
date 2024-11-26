@@ -18,7 +18,7 @@ class CallNumberInput extends Component
     public function rules()
     {
         return [
-            'phone' => ['required', 'regex:/^(\+)?[0-9\s]+$/','min:8','max:16'],
+            'phone' => ['required'],
             'type_id' =>  ['required'],
             'item_id' =>  ['required'],
         ];

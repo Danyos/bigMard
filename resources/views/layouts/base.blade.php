@@ -253,8 +253,8 @@ src="https://www.facebook.com/tr?id=1494824827967241&ev=PageView&noscript=1"
            const armenianPhoneNumberRegex = /^(?:\+\d+)?[\d\s-]+$/;
            const fullNameRegex = /^([A-Za-z]+|[Ա-Ֆա-ֆ]+)(?: ([A-Za-z]+|[Ա-Ֆա-ֆ]+))?$/;
 
-           const isValid = armenianPhoneNumberRegex.test(document.getElementById('inputPhone').value);
-           const isValidName = fullNameRegex.test(document.getElementById('inputName').value);
+           const isValid = document.getElementById('inputPhone').value.length>6;
+           const isValidName =document.getElementById('inputName').value.length>1;
 
            if (!isValid) {
                document.querySelector('.phoneError').innerHTML = 'Սխալ: Հեռախոսահամարը պետք է պարունակի միայն թվեր, առանց նշանների, ու առանց բացատների';
