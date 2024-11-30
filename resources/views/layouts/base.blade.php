@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/css/revolution-settings.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/revolution/navigation.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/flaticon/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <livewire:styles/>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ972DTBK2"></script>
