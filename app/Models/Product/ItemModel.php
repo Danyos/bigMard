@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class ItemModel extends Model
 {
     use HasFactory;
-    protected $fillable=['category_id','name','description', 'price','discount', 'auction_end_time','status','count'];
+    protected $fillable=['category_id','name','description',
+
+        'price','discount', 'auction_end_time','status','count','order_time'];
 
     public function category()
     {
@@ -27,5 +29,13 @@ class ItemModel extends Model
     {
         return $this->hasOne(ItemGalleriesModel::class,'item_id','id');
     }
-
+    public function scopeOrdered($query)
+    {
+        return $query->orderByRaw("
+            CASE
+                WHEN order_time IS NOT NULL AND order_time > NOW() THEN 0
+                ELSE 1
+            END, order_time DESC
+        ");
+    }
 }

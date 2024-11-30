@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Validator;
 
 class WelcomeController extends Controller
 {
+
+
     public function index()
     {
 
         $shouldShowHeaderAndFooter = true;
-        $item=ItemModel::with(['ItemGallery'])->orderBy('id','desc')->get();
+        $item=ItemModel::with(['ItemGallery'])->ordered()->get();
 
         return view('welcome', compact('shouldShowHeaderAndFooter',
             'item'));

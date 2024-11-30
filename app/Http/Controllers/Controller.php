@@ -10,11 +10,5 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function __construct()
-    {
-        $status=PageStatusModel::first();
-        if($status->status=="inactive"){
-            abort(500);
-        }
-    }
+
 }

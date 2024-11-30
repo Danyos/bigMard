@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $product = ItemModel::paginate(9);
+        $product = ItemModel::ordered()->paginate(9);
         return view('Admin.component.product.index', [
             'product' => $product
         ]);
@@ -23,9 +23,9 @@ class ProductController extends Controller
 
     public function create()
     {
-$category=CategoryModel::get();
+        $category = CategoryModel::get();
 
-        return view('Admin.component.product.created',compact('category'));
+        return view('Admin.component.product.created', compact('category'));
     }
 
     public function store(Request $request)
@@ -105,7 +105,7 @@ $category=CategoryModel::get();
 
         $imagename = null;
         $image = $request->file($name);
-        $imagename = date("Y") . '/' . date("m") . '/'  . $item->id . random_int(1, 99) . '.' . $image->getClientOriginalExtension();
+        $imagename = date("Y") . '/' . date("m") . '/' . $item->id . random_int(1, 99) . '.' . $image->getClientOriginalExtension();
         $destinationPath = public_path('product/');
         $pah = public_path('product/' . date("Y") . '/' . date("m"));
         if (!file_exists($pah) > 0):
@@ -158,9 +158,9 @@ $category=CategoryModel::get();
         $itemGallery = ItemGalleriesModel::where('item_id', $id)->get();
         $other = ItemOtherInformate::where('item_id', $id)->first();
 
-        if(!$other){
+        if (!$other) {
             ItemOtherInformate::create([
-                'item_id'=> $id
+                'item_id' => $id
 
             ]);
         }
@@ -174,13 +174,34 @@ $category=CategoryModel::get();
         $itemGallery = ItemGalleriesModel::where('item_id', $id)->get();
         $other = ItemOtherInformate::where('item_id', $id)->first();
 
-        if(!$other){
+        if (!$other) {
             ItemOtherInformate::create([
-                    'item_id'=> $id
+                'item_id' => $id
 
             ]);
         }
         return view('Admin.component.product.edit', compact('id', 'item', 'itemGallery', 'other'));
+    }
+
+    public function showSetActiveForm($id)
+    {
+        $item = ItemModel::findOrFail($id);
+
+        return view('Admin.component.product.set-active', compact('item'));
+    }
+    public function setActive(Request $request, $id)
+    {
+        $request->validate([
+            'order_time' => 'required|date',
+        ]);
+
+        $item = ItemModel::findOrFail($id);
+
+        // Թարմացնել order_time
+        $item->order_time = Carbon::parse($request->order_time);
+        $item->save();
+
+        return redirect()->route('admin.product.index')->with('success', 'Ապրանքի ակտիվացման ժամանակը հաջողությամբ թարմացվեց։');
     }
 
     public function update(Request $request, $id)
@@ -197,7 +218,7 @@ $category=CategoryModel::get();
 
         $item->update([
             'name' => $request->title,
-              'count' => $request->count,
+            'count' => $request->count,
             'description' => $request->contextBig,
             'price' => $request->price,
             'discount' => $request->discount,

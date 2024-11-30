@@ -114,7 +114,7 @@
                                 <div class="item" >
                                     @if (!(\Illuminate\Support\Carbon::parse($item->auction_end_time) <= \Illuminate\Support\Carbon::now()))
                                         @if($item->discount)
-                                            <div class="discounts" style="transform: rotate(90deg)"><span>{{$item->discount}}%</span></div>
+                                            <div class="discounts" ><span>{{$item->discount}}%</span></div>
                                         @endif
                                     @endif
                                     <a href="{{asset($items->image_path)}}" data-fancybox="gallery"
@@ -342,7 +342,7 @@
                         <img src="{{asset($other->underImages)}}" alt="" class="w-100 h-100">
                         @if (!(\Illuminate\Support\Carbon::parse($item->auction_end_time) <= \Illuminate\Support\Carbon::now()))
                             @if($item->discount)
-                                <div class="discounts" style="transform: rotate(90deg)"><span>{{$item->discount}}%</span></div>
+                                <div class="discounts" ><span>{{$item->discount}}%</span></div>
                             @endif
                         @endif
                     </div>

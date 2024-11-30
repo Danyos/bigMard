@@ -40,27 +40,32 @@
                                 </div>
                             </div>
                             <div class="shop-content text-center">
-                                <h4 class="darkcolor pb-2"><a href="{{route('item.show',$items->id)}}">{{$items->name}}</a></h4>
 
                                 @if (\Illuminate\Support\Carbon::parse($items->auction_end_time) <= \Illuminate\Support\Carbon::now())
+                                    <h4 class="darkcolor pb-2"><a href="{{route('item.show',$items->id)}}">{{$items->name}}</a></h4>
+
                                     <h3 class="price-product font-weight-bold">{{$items->price}} դ</h3>
                                 @else
                                     @if($items->discount)
                                         <div class="discounts"><span>{{$items->discount}}%</span></div>
                                     @endif
                                     @if($items->discount)
-                                        <h5 class="price-product font-weight-bold">
+                                            <h4 class="darkcolor pb-2"><a href="{{route('item.show',$items->id)}}">{{$items->name}}</a></h4>
+
+                                            <h5 class="price-product font-weight-bold">
                                             <del>{{$items->price}} դ</del>
                                         </h5>
                                         <h3 class="price-product font-weight-bold">{{$items->price - (($items->price * $items->discount) / 100) }}
                                             դրամ</h3>
                                     @else
-                                        <h3 class="price-product font-weight-bold">{{$items->price}} դրամ</h3>
+                                            <h4 class="darkcolor pb-2"><a href="{{route('item.show',$items->id)}}">{{$items->name}}</a></h4>
+
+                                            <h3 class="price-product font-weight-bold">{{$items->price}} դրամ</h3>
 
                                             @endif
                                             @endif
 
-                                            <button type="button" class="btn btn-primary mt-5 whitecolor p-2 hover-default orderBtn"
+                                            <button type="button" class="btn btn-primary mt-2 whitecolor p-2 hover-default orderBtn"
                                                     data-toggle="modal" data-id="{{$items->id}}" data-title="{{$items->name}}" data-desc="{{$items->description}}" data-target="#exampleModal" >
                                                 Պատվիրել հիմա <i class="fa fa-shopping-cart"></i>
                                             </button>

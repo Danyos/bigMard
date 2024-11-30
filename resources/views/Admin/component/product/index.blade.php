@@ -81,6 +81,10 @@ format('Y-m-d\TH:i'):"-"}}
                                                 @method('DELETE')
                                                 <button class="btn btn-danger">Delete</button>
                                             </form>
+                                            <td>
+                                                <a href="{{ route('admin.items.setActive', $products->id) }}" class="btn btn-warning btn-sm mt-2">Սահմանել Ժամանակ {{$products->order_time??''}}</a>
+                                            </td>
+
                                         </div>
                                     </div>
                                 </div>

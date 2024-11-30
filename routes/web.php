@@ -47,6 +47,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('/category', App\Http\Controllers\Admin\CategoryController::class );
     Route::delete('/delete/product/images', [App\Http\Controllers\Admin\ProductController::class,'deleteImages'] )->name('deleteImages');
 
+    Route::get('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'showSetActiveForm'])->name('items.setActive');
+    Route::post('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'setActive'])->name('items.set-active.post');
 
     Route::get('/change-password', [\App\Http\Controllers\Admin\user\ChangePasswordController::class, 'showChangePasswordForm'])->name('change.password');
     Route::post('/change-password', [\App\Http\Controllers\Admin\user\ChangePasswordController::class, 'changePassword'])->name('change.password.post');
