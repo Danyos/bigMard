@@ -26,6 +26,7 @@
 
                         <button type="submit" class="btn btn-primary mt-3">Հաստատել</button>
                         <a href="{{ route('admin.product.index') }}" class="btn btn-secondary mt-3">Վերադառնալ</a>
+                        <a href="{{ route('admin.items.setInactive',$item->id) }}" class="btn btn-secondary mt-3">Դադար</a>
                     </form>
                 </div>
             </div>

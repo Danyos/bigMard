@@ -203,6 +203,18 @@ class ProductController extends Controller
 
         return redirect()->route('admin.product.index')->with('success', 'Ապրանքի ակտիվացման ժամանակը հաջողությամբ թարմացվեց։');
     }
+    public function setInActive($id)
+    {
+
+
+        $item = ItemModel::findOrFail($id);
+
+        // Թարմացնել order_time
+        $item->update(['order_time' => null]);
+        $item->save();
+
+        return redirect()->route('admin.product.index')->with('success', 'Ապրանքի ակտիվացման ժամանակը հաջողությամբ թարմացվեց։');
+    }
 
     public function update(Request $request, $id)
     {

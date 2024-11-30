@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('/reviews', App\Http\Controllers\Admin\ReviewRequestController::class );
     Route::resource('/category', App\Http\Controllers\Admin\CategoryController::class );
     Route::delete('/delete/product/images', [App\Http\Controllers\Admin\ProductController::class,'deleteImages'] )->name('deleteImages');
+    Route::get('/items/setInActive/{id}', [App\Http\Controllers\Admin\ProductController::class, 'setInActive'])->name('items.setInactive');
 
     Route::get('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'showSetActiveForm'])->name('items.setActive');
     Route::post('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'setActive'])->name('items.set-active.post');
