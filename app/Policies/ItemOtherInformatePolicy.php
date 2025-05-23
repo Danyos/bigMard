@@ -2,9 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\Item\ItemOtherInformate;
+use App\Models\Product\ItemOtherInformate;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class ItemOtherInformatePolicy
 {

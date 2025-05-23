@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Models\PageStatusModel;
 use App\Http\Requests\StorePageStatusModelRequest;
 use App\Http\Requests\UpdatePageStatusModelRequest;
+use App\Models\Product\PageStatusModel;
 
 class PageStatusModelController extends Controller
 {

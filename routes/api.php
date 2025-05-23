@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product\ItemDetailsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +20,19 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-Route::group(['middleware' => 'pageStatus.api'], function () {
 
+
+
+Route::middleware('auth.api.key')->group(function () {
     Route::get('/block', [\App\Http\Controllers\api\PageStatusController::class, 'update']);
-
+    Route::get('/info', [\App\Http\Controllers\api\ProductInformationController::class, 'cat']);
+    Route::post('/order/product', [\App\Http\Controllers\api\ProductInformationController::class, 'order']);
+    Route::post('/feedback/product', [\App\Http\Controllers\api\ProductInformationController::class, 'feedback']);
+    Route::get('/product/details/{id}', [\App\Http\Controllers\api\ProductInformationController::class, 'details']);
+    Route::get('/additional/details/{id}', [\App\Http\Controllers\api\ProductInformationController::class, 'additional']);
+    Route::get('/product/reviews/{id}', [\App\Http\Controllers\api\ProductInformationController::class, 'detailsReviews']);
+    Route::get('/product/images/{id}', [\App\Http\Controllers\api\ProductInformationController::class, 'detailsImages']);
+    Route::get('/product/item/details/{id}', [\App\Http\Controllers\api\ProductInformationController::class, 'itemDetails']);
 });
+
+

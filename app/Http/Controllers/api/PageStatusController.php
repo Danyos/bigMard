@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
-use App\Models\Models\PageStatusModel;
-use Illuminate\Http\Request;
+use App\Models\Product\PageStatusModel;
 
 class PageStatusController
 {

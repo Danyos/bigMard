@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Models\PageStatusModel;
+use App\Models\Product\PageStatusModel;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

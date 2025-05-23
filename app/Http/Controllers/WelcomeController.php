@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\CallupModel;
 use App\Models\FeedbackModel;
-use App\Models\Item\ItemOtherInformate;
 use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
+use App\Models\Product\ItemOtherInformate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;

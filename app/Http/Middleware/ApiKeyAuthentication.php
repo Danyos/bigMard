@@ -12,7 +12,7 @@ class ApiKeyAuthentication
         $password = $request->query('X-API-Password');
         // Verify key and password against expected values
         if ($key !== 'X-API-BigMard-Armenia' || $password !== 'PSW-X-API-Big-Mard-Armenia') {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => $key], 401);
         }
 
         return $next($request);

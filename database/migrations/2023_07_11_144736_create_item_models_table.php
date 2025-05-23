@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
              $table->string('count')->default(1);
             $table->enum('status',['active','inactive'])->default('inactive');
+            $table->enum('new',['active','inactive'])->default('inactive');
+            $table->enum('best',['active','inactive'])->default('inactive');
             $table->longText('description');
             $table->integer('price');
             $table->integer('discount')->nullable();

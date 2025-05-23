@@ -4,20 +4,28 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category\CategoryModel;
-use App\Models\Item\ItemOtherInformate;
 use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
-use Illuminate\Http\Request;
+use App\Models\Product\ItemOtherInformate;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function index()
     {
 
-        $product = ItemModel::ordered()->paginate(9);
-        return view('Admin.component.product.index', [
-            'product' => $product
+        $products = ItemModel::where('status', 'active')->ordered()->paginate(9);
+        return view('Admin.page.product.index', [
+            'products' => $products
+        ]);
+    }
+    public function draft()
+    {
+
+        $products = ItemModel::where('status', 'inactive')->orderBy('id','desc')->paginate(9);
+        return view('Admin.page.product.index', [
+            'products' => $products
         ]);
     }
 
@@ -25,49 +33,49 @@ class ProductController extends Controller
     {
         $category = CategoryModel::get();
 
-        return view('Admin.component.product.created', compact('category'));
+        return view('Admin.page.product.create', compact('category'));
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required',
-            'price' => 'required',
-            'contextBig' => 'required',
-            'underImages' => 'required',
-            'productImages' => 'required',
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'discount' => 'nullable|numeric|min:0',
+            'description' => 'required|string',
+            'category_id' => 'required',
+            'status' => 'required|in:active,inactive',
+            'count' => 'required|integer|min:1',
+            'auction_end_time' => 'nullable|date',
+            'imgText' => 'required|string',
+            'youtubUrl' => 'nullable|url',
         ]);
 
-//        $dateTime = Carbon::createFromFormat('Y-m-d\TH:i', $request->date);
-//        $formattedDateTime = $dateTime->format('Y-m-d H:i:s');
-
-
-//        imgText
-//youtubUrl
-//status
+        // Ստեղծում ենք հիմնական մոդելը
         $item = ItemModel::create([
-            'name' => $request->title,
+            'name' => $request->name,
             'count' => $request->count,
-            'description' => $request->contextBig,
+            'description' => $request->description,
             'price' => $request->price,
             'discount' => $request->discount,
-            'auction_end_time' => $request->date,
+            'auction_end_time' => $request->auction_end_time,
             'status' => $request->status,
             'category_id' => $request->category_id,
-
         ]);
 
-        $new = ItemOtherInformate::create([
+        // Պահպանում ենք լրացուցիչ տվյալները
+        ItemOtherInformate::create([
             'item_id' => $item->id,
-            'imgText' => $request['imgText'],
-            'youtubUrl' => $request['youtubUrl'],
-
+            'imgText' => $request->imgText,
+            'youtubUrl' => $request->youtubUrl,
         ]);
-        $this->otherInformate($request, $item, $new->id);
-        $this->uploadMultiplayImages($request, $item);
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.coverImage',$item->id)->with('success', 'Product added successfully!');
     }
+
+
+
+
 
     public function dateTimeWay($inputDate)
     {
@@ -99,57 +107,6 @@ class ProductController extends Controller
     }
 
 
-    public function uploadimgaes($name, $request, $item, $id)
-    {
-
-
-        $imagename = null;
-        $image = $request->file($name);
-        $imagename = date("Y") . '/' . date("m") . '/' . $item->id . random_int(1, 99) . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('product/');
-        $pah = public_path('product/' . date("Y") . '/' . date("m"));
-        if (!file_exists($pah) > 0):
-            if (!is_dir($pah . date("Y") . '/' . date("m"))) {
-                mkdir($pah, 0755, true);
-            }endif;
-        $image->move($pah, $imagename);
-
-
-        $imagename = 'product/' . $imagename;
-        ItemOtherInformate::find($id)->update([
-            $name => $imagename,
-        ]);
-        return back();
-    }
-
-    public function uploadMultiplayImages($request, $item)
-    {
-
-
-        $imagename = null;
-        $images = $request->file('productImages');
-        foreach ($images as $image) {
-            $imagename = date("Y") . '/' . date("m") . '/' . random_int(1, 99) . $item->id . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('item/');
-            $pah = public_path('item/' . date("Y") . '/' . date("m"));
-            if (!file_exists($pah) > 0):
-                if (!is_dir($pah . date("Y") . '/' . date("m"))) {
-                    mkdir($pah, 0755, true);
-                }endif;
-            $image->move($pah, $imagename);
-
-
-            ItemGalleriesModel::create([
-                'item_id' => $item->id,
-                'image_path' => 'item/' . $imagename
-            ]);
-        }
-
-        return back();
-
-
-    }
-
     public function show($id)
     {
 
@@ -164,7 +121,7 @@ class ProductController extends Controller
 
             ]);
         }
-        return view('Admin.component.product.show', compact('id', 'item', 'itemGallery', 'other'));
+        return view('Admin.page.product.show', compact('id', 'item', 'itemGallery', 'other'));
     }
 
     public function edit($id)
@@ -173,21 +130,21 @@ class ProductController extends Controller
         $item = ItemModel::find($id);
         $itemGallery = ItemGalleriesModel::where('item_id', $id)->get();
         $other = ItemOtherInformate::where('item_id', $id)->first();
-
+        $category=CategoryModel::all();
         if (!$other) {
             ItemOtherInformate::create([
                 'item_id' => $id
 
             ]);
         }
-        return view('Admin.component.product.edit', compact('id', 'item', 'itemGallery', 'other'));
+        return view('Admin.page.product.edit', compact('id', 'item', 'itemGallery', 'other','category'));
     }
 
     public function showSetActiveForm($id)
     {
         $item = ItemModel::findOrFail($id);
 
-        return view('Admin.component.product.set-active', compact('item'));
+        return view('Admin.page.product.set-active', compact('item'));
     }
     public function setActive(Request $request, $id)
     {
@@ -229,19 +186,17 @@ class ProductController extends Controller
         ]);
 
         $item->update([
-            'name' => $request->title,
+            'name' => $request->name,
             'count' => $request->count,
-            'description' => $request->contextBig,
+            'description' => $request->description,
             'price' => $request->price,
+
             'discount' => $request->discount,
-            'auction_end_time' => $request->date ?? $item->auction_end_time,
+            'auction_end_time' => $request->auction_end_time,
             'status' => $request->status,
         ]);
 
-        if ($request->has('productImages')) {
-            $this->uploadMultiplayImages($request, $item);
-        }
-        $this->otherInformate($request, $item, $new->id);
+
         return back();
     }
 

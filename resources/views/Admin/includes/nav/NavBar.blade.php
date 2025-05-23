@@ -1,64 +1,58 @@
-<div class="left-side-bar">
-    <div class="brand-logo">
-        <a href="{{route('admin.home')}}">
-           BigMard
+
+<ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
+    <!-- Dashboard -->
+    <li class="menu-item">
+        <a href="{{route('admin.home')}}" class="has-chevron" >
+            <span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
         </a>
-        <div class="close-sidebar" data-toggle="left-sidebar-close">
-            <i class="ion-close-round"></i>
-        </div>
-    </div>
-    <div class="menu-block customscroll">
-        <div class="sidebar-menu">
-            <ul id="accordion-menu">
-                <li>
-                    <a href="{{route('admin.home')}}" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-house"></span>
-                        <span class="mtext">Home</span>
-                    </a>
-                </li>
+    </li>
+    <!-- /Dashboard -->
+    <!-- product -->
 
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
+    <li class="menu-item">
+        <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="admin/products">
+            <span><i class="fa fa-archive fs-16"></i>Products </span>
+        </a>
+        <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
+            <li> <a href="{{route('admin.product.create')}}">Add Product</a> </li>
+            <li> <a href="{{route('admin.product.index')}}">Product List</a> </li>
+            <li> <a href="{{route('admin.product.draft')}}">Product draft</a> </li>
 
-                        <span class="micon bi bi-table"></span
-                        ><span class="mtext">Product</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('admin.product.index')}}">View All</a></li>
-                        <li>
-                            <a href="{{route('admin.product.create')}}">Add product</a>
-                        </li>
-                    </ul>
-                </li>
 
-                <li>
-                    <a href="{{route('admin.category.index')}}" class="dropdown-toggle no-arrow">
-							<span class="micon bi bi-textarea-resize"></span
-                            ><span class="mtext">Category</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('admin.reviews.index')}}" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-chat-right-dots"></span
-                        ><span class="mtext">Review</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('admin.callUp.index')}}" class="dropdown-toggle no-arrow">
-							<span class="micon bi bi-receipt-cutoff"></span
-                            ><span class="mtext">Call Up</span>
-                    </a>
-                </li>
-                <li hidden>
+        </ul>
+    </li>
+    <!-- product end -->
 
-                        <form method="post" action="{{ route('admin.logout') }}" id="logout">
-                            @csrf
+    <!-- orders -->
+    <li class="menu-item">
+        <a href="{{route('admin.callUp.index')}}">
+            <span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
+        </a>
+    </li>
+    <!-- orders end -->
+    <!-- restaurants -->
+    <li class="menu-item">
+        <a href="{{route('admin.category.index')}}">
+            <span><i class="fa fa-tasks fs-16"></i>Category List</span>
+        </a>
+    </li> <li class="menu-item">
+        <a href="{{route('admin.reviews.index')}}">
+            <span><i class="material-icons fs-16">message</i>Reviews List</span>
 
-                        </form>
+        </a>
+    </li>
+    <li class="menu-item">
+        <a href="{{route('admin.slider-images.index')}}">
+            <span><i class="material-icons fs-16">input</i>Slider List</span>
 
-                </li>
+        </a>
+    </li>
+    <!-- restaurants end -->
 
-            </ul>
-        </div>
-    </div>
-</div>
+
+
+</ul>
+<form method="post" action="{{ route('admin.logout') }}" id="logout">
+    @csrf
+
+</form>

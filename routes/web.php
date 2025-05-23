@@ -42,14 +42,29 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/product', App\Http\Controllers\Admin\ProductController::class );
+
+    Route::group(['prefix' => 'products'], function () {
+        Route::resource('item-details', \App\Http\Controllers\Admin\ItemDetailsController::class);
+
+        Route::get('/carousel/{id}', [App\Http\Controllers\Admin\ProductImage::class,'carousel' ])->name('product.carousel');
+        Route::get('/image/{id}', [App\Http\Controllers\Admin\ProductImage::class,'coverImage' ])->name('product.coverImage');
+        Route::post('/image/upload/{id}', [App\Http\Controllers\Admin\ProductImage::class,'ImageUpload' ])->name('product.imageUpload');
+        Route::post('/image/carousel/upload/{id}', [App\Http\Controllers\Admin\ProductImage::class,'carouselImageUpload' ])->name('product.carouselImageUpload');
+        Route::delete('/carousel/image/trash/{id}', [App\Http\Controllers\Admin\ProductImage::class,'carouselImageTrash' ])->name('product.carouselImageTrash');
+        Route::get('/draft', [App\Http\Controllers\Admin\ProductController::class,'draft' ])->name('product.draft');
+        Route::post('/other/create/{id}', [App\Http\Controllers\Admin\ProductController::class,'other' ])->name('product.other');
+        Route::delete('/delete/product/images', [App\Http\Controllers\Admin\ProductController::class,'deleteImages'] )->name('deleteImages');
+        Route::get('/items/setInActive/{id}', [App\Http\Controllers\Admin\ProductController::class, 'setInActive'])->name('items.setInactive');
+        Route::get('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'showSetActiveForm'])->name('items.setActive');
+        Route::post('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'setActive'])->name('items.set-active.post');
+
+    });
     Route::resource('/callUp', App\Http\Controllers\Admin\CallUpCenterRequestController::class );
     Route::resource('/reviews', App\Http\Controllers\Admin\ReviewRequestController::class );
     Route::resource('/category', App\Http\Controllers\Admin\CategoryController::class );
-    Route::delete('/delete/product/images', [App\Http\Controllers\Admin\ProductController::class,'deleteImages'] )->name('deleteImages');
-    Route::get('/items/setInActive/{id}', [App\Http\Controllers\Admin\ProductController::class, 'setInActive'])->name('items.setInactive');
 
-    Route::get('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'showSetActiveForm'])->name('items.setActive');
-    Route::post('/items/{id}/setActive', [App\Http\Controllers\Admin\ProductController::class, 'setActive'])->name('items.set-active.post');
+    Route::resource('/slider-images', \App\Http\Controllers\Admin\SliderImageController::class);
+
 
     Route::get('/change-password', [\App\Http\Controllers\Admin\user\ChangePasswordController::class, 'showChangePasswordForm'])->name('change.password');
     Route::post('/change-password', [\App\Http\Controllers\Admin\user\ChangePasswordController::class, 'changePassword'])->name('change.password.post');

@@ -1,10 +1,8 @@
 @extends('Admin.layouts.app')
 
 @section('content')
-    <div class="main-container">
+    <div class="row">
 
-
-                        <iframe src="https://bigmard.am" width="100%" height="800px" frameborder="0"></iframe>
 
     </div>
 @endsection

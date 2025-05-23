@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Item\ItemOtherInformate;
 use App\Http\Requests\StoreItemOtherInformateRequest;
 use App\Http\Requests\UpdateItemOtherInformateRequest;
+use App\Models\Product\ItemOtherInformate;
 
 class ItemOtherInformateController extends Controller
 {

@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ItemGalleriesModel extends Model
 {
-    protected $fillable=['item_id', 'image_path'];
+    protected $table = 'item_galleries_models'; // Համոզվիր, որ ճիշտ է
+    protected $fillable = ['image_path', 'item_id'];
     use HasFactory;
     public function item()
     {

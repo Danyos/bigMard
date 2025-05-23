@@ -29,6 +29,10 @@ class ItemModel extends Model
     {
         return $this->hasOne(ItemGalleriesModel::class,'item_id','id');
     }
+    public function OtherInformation()
+    {
+        return $this->hasOne(ItemOtherInformate::class,'item_id','id');
+    }
     public function scopeOrdered($query)
     {
         return $query->orderByRaw("
