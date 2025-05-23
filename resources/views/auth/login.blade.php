@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-md-6 col-lg-7 d-none d-md-flex justify-content-center">
-                <img src="{{ asset('admin/vendors/images/login-page-img.png') }}"
+                <img src="{{asset('admin/logo-black.png')}}"
                      alt="Մուտքի նկար"
                      class="img-fluid"
                      style="max-height: 390px;">
