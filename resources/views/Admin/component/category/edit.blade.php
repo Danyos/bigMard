@@ -48,6 +48,16 @@
                                                 </em>
                                             @endif
                                         </div>
+                                    </div><div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Title :</label>
+                                            <input type="text" class="form-control" name="slug" value="{{$category->slug}}" required/>
+                                            @if($errors->has('slug'))
+                                                <em class="invalid-feedback">
+                                                    {{ $errors->first('slug') }}
+                                                </em>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </section>

@@ -39,7 +39,7 @@ class ItemModel extends Model
             CASE
                 WHEN order_time IS NOT NULL AND order_time > NOW() THEN 0
                 ELSE 1
-            END, order_time DESC
+            END, order_time ASC
         ");
     }
 }

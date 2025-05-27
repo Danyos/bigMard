@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('best',['active','inactive'])->default('inactive');
             $table->longText('description');
             $table->integer('price');
+            $table->timestamp('order_time');
             $table->integer('discount')->nullable();
             $table->dateTime('auction_end_time')->nullable();
 //            $table->integer('category_id');

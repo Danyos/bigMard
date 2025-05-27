@@ -48,6 +48,10 @@
                                 @error('auction_end_time') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
 
+
+
+
+
                             <div class="form-group">
                                 <label for="count">Stock Count</label>
                                 <input type="number" name="count" class="form-control" value="{{ old('count', 1) }}">

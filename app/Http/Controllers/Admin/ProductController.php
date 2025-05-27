@@ -15,7 +15,11 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = ItemModel::where('status', 'active')->ordered()->paginate(9);
+        $products = ItemModel::where('status', 'active')
+            ->orderByRaw('order_time IS NULL, order_time DESC')
+            ->orderBy('created_at', 'desc')
+            ->paginate(12);
+
         return view('Admin.page.product.index', [
             'products' => $products
         ]);
@@ -49,7 +53,9 @@ class ProductController extends Controller
             'auction_end_time' => 'nullable|date',
             'imgText' => 'required|string',
             'youtubUrl' => 'nullable|url',
+
         ]);
+
 
         // Ստեղծում ենք հիմնական մոդելը
         $item = ItemModel::create([
@@ -61,8 +67,8 @@ class ProductController extends Controller
             'auction_end_time' => $request->auction_end_time,
             'status' => $request->status,
             'category_id' => $request->category_id,
-        ]);
 
+            ]);
         // Պահպանում ենք լրացուցիչ տվյալները
         ItemOtherInformate::create([
             'item_id' => $item->id,
@@ -148,6 +154,7 @@ class ProductController extends Controller
     }
     public function setActive(Request $request, $id)
     {
+
         $request->validate([
             'order_time' => 'required|date',
         ]);
@@ -155,10 +162,12 @@ class ProductController extends Controller
         $item = ItemModel::findOrFail($id);
 
         // Թարմացնել order_time
-        $item->order_time = Carbon::parse($request->order_time);
-        $item->save();
+        $item->update([
+            'order_time' =>  Carbon::parse($request->order_time),
+        ]);
 
-        return redirect()->route('admin.product.index')->with('success', 'Ապրանքի ակտիվացման ժամանակը հաջողությամբ թարմացվեց։');
+        return back();
+
     }
     public function setInActive($id)
     {
@@ -166,9 +175,9 @@ class ProductController extends Controller
 
         $item = ItemModel::findOrFail($id);
 
-        // Թարմացնել order_time
-        $item->update(['order_time' => null]);
-        $item->save();
+//        // Թարմացնել order_time
+//        $item->update(['order_time' => null]);
+//        $item->save();
 
         return redirect()->route('admin.product.index')->with('success', 'Ապրանքի ակտիվացման ժամանակը հաջողությամբ թարմացվեց։');
     }

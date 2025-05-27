@@ -21,7 +21,12 @@
 
     <div class="row">
         @foreach($products as $product)
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            @php
+                $orderTimeTime = \Illuminate\Support\Carbon::parse($product->order_time);
+                $isOrderExpired = $orderTimeTime->isPast();
+            @endphp
+
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 border">
                 <div class="ms-card">
                     <div class="ms-card-img">
                         @if(isset($product->OtherInformation->coverImages))
@@ -37,16 +42,12 @@
                     <div class="ms-card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">{{ $product->name }}</h6>
-                            <h6 class="ms-text-primary mb-0">${{ number_format($product->price, 2) }}</h6>
+                            <h6 class="ms-text-primary mb-0"> {{ number_format($product->price, 2) }} դրամ</h6>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-2">
                             <div>
                                 <p>Set Active</p>
 
-                                @php
-                                    $orderTimeTime = \Illuminate\Support\Carbon::parse($product->order_time);
-                                    $isOrderExpired = $orderTimeTime->isPast();
-                                @endphp
 
                                 <span class="badge {{ $isOrderExpired ? 'd-none' : 'badge-success' }}">
         {{ $product->order_time ? $orderTimeTime->format('Y-m-d\TH:i') : "-" }}

@@ -66,9 +66,12 @@
 
                             </section>
                             <h5>Save</h5>
-                            <section>
+                            <div>
                                 <button class="btn btn-primary my-3" id="uploadBtn" type="submit">Submit</button>
-                            </section>
+
+                            </div>
+
+
                         </form>
                         <div class="row" id="imageGallery">
                             @foreach($images as $image)
@@ -85,7 +88,11 @@
                     </div>
                 </div>
 
+                <div>
+                    <a  href="{{route('admin.items.setActive',$id)}}" class="btn btn-primary my-3" id="uploadBtn" type="submit">Add Time</a>
+                    <a href="{{route('admin.product.edit',$id)}}"  class="btn btn-success my-3">Edit</a>
 
+                </div>
 
             </div>
         </div>
