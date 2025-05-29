@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductInformationController extends Controller
 {
+
+    public function ani(){
+        return response()->json([
+            'text'=>"barev vonces"
+
+        ]);
+    }
     public function cat()
     {
         $list = CategoryModel::get();
