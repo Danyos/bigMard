@@ -19,6 +19,27 @@ Route::get('/clear', function() {
 
     return 'Routes cache cleared';
 });
+// web.php
+
+Route::get('/page-password', function (Illuminate\Http\Request $request) {
+    $redirect = $request->query('redirect', '/');
+    return view('page-password', compact('redirect'));
+})->name('page.password.form');
+
+Route::post('/page-password', function (Illuminate\Http\Request $request) {
+    $password = $request->input('password');
+    $redirect = $request->input('redirect', '/');
+    // Տեղդիր քո գաղտնաբառը
+    $realPassword = 'd98657545';
+
+    if ($password === $realPassword) {
+        session(['page_password_verified' => true]);
+        session(['page_password_verified_at' => now()]);
+        return redirect('/' . ltrim($redirect, '/'));
+    }
+    return back()->withErrors(['password' => 'Սխալ գաղտնաբառ']);
+})->name('page.password.check');
+Route::middleware(['pagepassword'])->group(function () {
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('Homeindex');
 Route::get('/privacy-policy', [App\Http\Controllers\WelcomeController::class, 'policy'])->name('privacy.policy');
 Route::get('/guarantee', [App\Http\Controllers\WelcomeController::class, 'guarantee'])->name('privacy.guarantee');
@@ -29,7 +50,7 @@ Route::get('/popup/{slug}', [App\Http\Controllers\WelcomeController::class, 'pop
 Route::post('/feedback', [App\Http\Controllers\WelcomeController::class, 'feedback'])->name('item.feedback');
 Route::post('/formregister', [App\Http\Controllers\WelcomeController::class, 'register'])->name('item.reg');
 
-
+});
 
 //Auth::routes(['register' => false, 'reset' => false,'login' => 'signin']);
 Route::get('/signin', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');

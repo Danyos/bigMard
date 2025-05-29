@@ -38,6 +38,8 @@
                                 width="1080px" height="1080px"
                                 alt="shop">
                         @endif
+                            <span class="badge badge-secondary">Best-{{$product->best}}</span>
+                            <span class="badge badge-secondary">New-{{$product->new}}</span>
                     </div>
                     <div class="ms-card-body">
                         <div class="d-flex justify-content-between align-items-center">

@@ -12,12 +12,12 @@ class ItemDetailsController extends Controller
     public function show($id)
     {
         $itemDetails = ItemDetailsModel::with('ItemInfo')->where('product_id',$id)->get();
-        return view('admin.page.product.item-details.index', compact('itemDetails','id'));
+        return view('Admin.page.product.item-details.index', compact('itemDetails','id'));
     }
 
     public function edit($id)
     {
-        return view('admin.page.product.item-details.create',compact('id'));
+        return view('Admin.page.product.item-details.create',compact('id'));
     }
 
     public function store(Request $request)
@@ -30,7 +30,7 @@ class ItemDetailsController extends Controller
 
         ItemDetailsModel::create($validated);
 
-        return redirect()->route('admin.item-details.show',$request->product_id)->with('success', 'Item detail created successfully.');
+        return redirect()->route('Admin.item-details.show',$request->product_id)->with('success', 'Item detail created successfully.');
     }
 
 

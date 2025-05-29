@@ -61,6 +61,8 @@ class ProductController extends Controller
         $item = ItemModel::create([
             'name' => $request->name,
             'count' => $request->count,
+            'new' => $request->new,
+            'best' => $request->best,
             'description' => $request->description,
             'price' => $request->price,
             'discount' => $request->discount,
@@ -199,7 +201,8 @@ class ProductController extends Controller
             'count' => $request->count,
             'description' => $request->description,
             'price' => $request->price,
-
+            'new' => $request->new,
+            'best' => $request->best,
             'discount' => $request->discount,
             'auction_end_time' => $request->auction_end_time,
             'status' => $request->status,

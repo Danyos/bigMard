@@ -11,7 +11,7 @@ class ItemModel extends Model
     use HasFactory;
     protected $fillable=['category_id','name','description',
 
-        'price','discount', 'auction_end_time','status','count','order_time'];
+        'price','discount', 'auction_end_time','status','count','order_time','new','best'];
 
     public function category()
     {

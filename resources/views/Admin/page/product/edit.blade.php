@@ -73,7 +73,31 @@
                         <textarea name="description" class="form-control inputFields ncontent" rows="4">{{ old('description', $item->description) }}</textarea>
                         @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                     </div>
-
+                    <section class="my-3">
+                        <div class="row">
+                            <!-- Images in description -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="status">Best</label>
+                                    <select class="form-control" name="best">
+                                        <option value="active"  {{ $item->best == 'active' ? 'selected' : '' }}>Active</option>
+                                        <option value="inactive"  {{ $item->best == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                                    </select>
+                                    @error('best') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="status">new</label>
+                                    <select class="form-control" name="new">
+                                        <option value="active" {{ $item->new == 'active' ? 'selected' : '' }} >Active</option>
+                                        <option value="inactive"  {{ $item->new == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                                    </select>
+                                    @error('new') <small class="text-danger">{{ $message }}</small> @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <h5>Remark</h5>
                     <section class="my-3">
                         <div class="row">
