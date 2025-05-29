@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::post('/test/for/ani', [\App\Http\Controllers\api\ProductInformationController::class, 'ani']);
+Route::get('/test/for/ani', [\App\Http\Controllers\api\ProductInformationController::class, 'ani']);
 
 Route::middleware('auth.api.key')->group(function () {
     Route::get('/block', [\App\Http\Controllers\api\PageStatusController::class, 'update']);
