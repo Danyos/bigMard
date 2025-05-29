@@ -6,7 +6,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:3000'], // FRONTEND URL
+    'allowed_origins' => ['http://localhost:3000','http://localhost:63342'], // FRONTEND URL
 
     'allowed_origins_patterns' => [],
 
