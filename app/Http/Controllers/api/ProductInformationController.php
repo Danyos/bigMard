@@ -18,6 +18,8 @@ class ProductInformationController extends Controller
 {
 
     public function ani(){
+
+        dd();
         return response()->json([
             'text'=>"barev vonces"
 
