@@ -33,7 +33,7 @@ class ProductInformationController extends Controller
     public function daniel()
     {
 
-        abort(404);
+        abort(500,'Internet error Not connected');
         $list = CategoryModel::get();
         return response()->json([
             'categories' => $list,
