@@ -18,6 +18,14 @@ use Illuminate\Support\Facades\Validator;
 class ProductInformationController extends Controller
 {
 
+    public function access()
+    {
+        sleep(5); // 5 վայրկյան սպասում
+        return response()->json([
+            'page' => false,
+        ]);
+    }
+
     public function ani()
     {
 
@@ -33,7 +41,7 @@ class ProductInformationController extends Controller
     public function daniel()
     {
 
-        abort(500,'Internet error Not connected');
+        abort(500, 'Internet error Not connected');
         $list = CategoryModel::get();
         return response()->json([
             'categories' => $list,
