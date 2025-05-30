@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\CallupModel;
+use App\Models\Category\CategoryModel;
 use App\Models\FeedbackModel;
 use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
 use App\Models\Product\ItemOtherInformate;
+use App\Models\SliderImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -18,26 +20,35 @@ class WelcomeController extends Controller
     public function index()
     {
 
-        $shouldShowHeaderAndFooter = true;
-        $item=ItemModel::with(['ItemGallery'])->ordered()->get();
 
-        return view('welcome', compact('shouldShowHeaderAndFooter',
-            'item'));
+        return view('welcome', [
+            'categories' => CategoryModel::get(),
+            'bests' => ItemModel::with(['OtherInformation'])->where('best', 'active')->ordered()->limit(12)->get(),
+            'newItems' => ItemModel::with(['OtherInformation'])->where('new', 'active')->ordered()->limit(12)->get(),
+            'sliders' => SliderImage::orderBy('id', 'desc')->get()
+        ]);
     }
+
+
     public function policy()
     {
 
         return view('page.PrivacyPolicy');
     }
-   public function guarantee()
+
+    public function guarantee()
     {
 
         return view('page.guarantee');
-    }  public function payments()
+    }
+
+    public function payments()
     {
 
         return view('page.payments');
-    }public function delivery()
+    }
+
+    public function delivery()
     {
 
         return view('page.delivery');
@@ -46,12 +57,12 @@ class WelcomeController extends Controller
     public function show($code)
     {
 
-            $item = ItemModel::find($code);
-            $feedback = FeedbackModel::where('status','active')->where('item_id',$item->id)->get();
-            $itemGallery = ItemGalleriesModel::where('item_id', $item->id)->get();
-            $other = ItemOtherInformate::where('item_id', $item->id)->first();
+        $item = ItemModel::find($code);
+        $feedback = FeedbackModel::where('status', 'active')->where('item_id', $item->id)->get();
+        $itemGallery = ItemGalleriesModel::where('item_id', $item->id)->get();
+        $other = ItemOtherInformate::where('item_id', $item->id)->first();
 
-            return view('Item.index', compact('item', 'itemGallery', 'other','feedback'));
+        return view('Item.index', compact('item', 'itemGallery', 'other', 'feedback'));
 
     }
 
@@ -71,7 +82,9 @@ class WelcomeController extends Controller
 
         }
     }
-    public function feedback(Request $request){
+
+    public function feedback(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
@@ -91,7 +104,8 @@ class WelcomeController extends Controller
     }
 
 
-    public function register(Request $request){
+    public function register(Request $request)
+    {
 
         $validatedData = $request->validate([
             'name' => ['required', 'string'],
@@ -104,10 +118,10 @@ class WelcomeController extends Controller
         ]);
 
         CallupModel::create([
-            'type_id'=>$request->type_id,
-            'item_id'=>$request->item_id,
-            'phone'=>$request->phone,
-            'name'=>$request->name,
+            'type_id' => $request->type_id,
+            'item_id' => $request->item_id,
+            'phone' => $request->phone,
+            'name' => $request->name,
         ]);
         return back();
     }

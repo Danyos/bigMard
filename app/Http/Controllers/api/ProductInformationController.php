@@ -11,13 +11,15 @@ use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
 use App\Models\SliderImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class ProductInformationController extends Controller
 {
 
-    public function ani(){
+    public function ani()
+    {
 
         $list = CategoryModel::get();
         return response()->json([
@@ -27,6 +29,28 @@ class ProductInformationController extends Controller
             'slider' => SliderImage::orderBy('id', 'desc')->get()
         ]);
     }
+
+    public function daniel()
+    {
+
+        abort(404);
+        $list = CategoryModel::get();
+        return response()->json([
+            'categories' => $list,
+            'best' => ItemModel::with(['OtherInformation'])->where('best', 'active')->ordered()->limit(12)->get(),
+            'newItem' => ItemModel::with(['OtherInformation'])->where('new', 'active')->ordered()->limit(12)->get(),
+            'slider' => SliderImage::orderBy('id', 'desc')->get()
+        ]);
+    }
+
+    public function test()
+    {
+        $response = Http::get('https://dummyjson.com/products');
+        // Տվյալները JSON-ից array դարձնել
+        $products = $response->json();
+        return response()->json($products);
+    }
+
     public function cat()
     {
         $list = CategoryModel::get();
@@ -62,7 +86,8 @@ class ProductInformationController extends Controller
         ], 201);
 
     }
-        public function order(Request $request)
+
+    public function order(Request $request)
     {
 
         $validatedData = $request->validate([
@@ -76,9 +101,9 @@ class ProductInformationController extends Controller
         ]);
 
         CallupModel::create([
-            'item_id'=>$request->id,
-            'phone'=>$request->phone,
-            'name'=>$request->name,
+            'item_id' => $request->id,
+            'phone' => $request->phone,
+            'name' => $request->name,
         ]);
         return response()->json('succsess');
     }
