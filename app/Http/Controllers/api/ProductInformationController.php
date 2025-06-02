@@ -32,6 +32,7 @@ class ProductInformationController extends Controller
         $list = CategoryModel::get();
         return response()->json([
             'categories' => $list,
+            'all' => ItemModel::with(['OtherInformation'])->ordered()->paginate(12),
             'best' => ItemModel::with(['OtherInformation'])->where('best', 'active')->ordered()->limit(12)->get(),
             'newItem' => ItemModel::with(['OtherInformation'])->where('new', 'active')->ordered()->limit(12)->get(),
             'slider' => SliderImage::orderBy('id', 'desc')->get()
