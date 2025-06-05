@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CallupModel;
 use App\Models\Category\CategoryModel;
 use App\Models\FeedbackModel;
+use App\Models\Product\ItemDetailsModel;
 use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
 use App\Models\Product\ItemOtherInformate;
@@ -23,12 +24,33 @@ class WelcomeController extends Controller
 
         return view('welcome', [
             'categories' => CategoryModel::get(),
-            'bests' => ItemModel::with(['OtherInformation'])->where('best', 'active')->ordered()->limit(12)->get(),
-            'newItems' => ItemModel::with(['OtherInformation'])->where('new', 'active')->ordered()->limit(12)->get(),
+            'bests' => ItemModel::with(['OtherInformation'])->where('status', 'active')->where('best', 'active')->ordered()->limit(12)->get(),
+            'newItems' => ItemModel::with(['OtherInformation'])->where('status', 'active')->where('new', 'active')->ordered()->limit(12)->get(),
+            'allItems' => ItemModel::with(['OtherInformation'])->where('status', 'active')->whereNot('best', 'active')->whereNot('new', 'active')->ordered()->limit(15)->get(),
             'sliders' => SliderImage::orderBy('id', 'desc')->get()
         ]);
     }
 
+    public function storeShop($slug)
+    {
+        $category = CategoryModel::where('slug', $slug)->firstOrFail();
+        $products = null;
+        if ($category) {
+            $products = ItemModel::with(['OtherInformation'])->where('status', 'active')->ordered()->paginate(15);
+
+        }
+        return view('page.storeShop', compact('category', 'products'));
+    }
+
+    public function storeProduct($id)
+    {
+        $galleries=ItemGalleriesModel::where('item_id', $id)->get();
+        $details=ItemDetailsModel::where('product_id', $id)->get();
+        $item= ItemModel::with(['OtherInformation'])->where('status', 'active')->where('id', $id)->first();
+
+
+        return view('page.product.index',compact('item','galleries','details'));
+    }
 
     public function policy()
     {

@@ -49,10 +49,10 @@
                         <a href="https://www.instagram.com/" target="_blank"><i class="feather icon-feather-instagram d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">100k Followers</span></a>
                     </div>
                 </div>
-                <a class="navbar-brand" href="demo-fashion-store.html">
-                    <img src="images/demo-fashion-store-logo-black.png" data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="default-logo">
-                    <img src="images/demo-fashion-store-logo-black.png" data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="alt-logo">
-                    <img src="images/demo-fashion-store-logo-black.png" data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="mobile-logo">
+                <a class="navbar-brand" href="{{ route('home.index') }}">
+                    <img src="{{asset('assets/image/logo.webp')}}" data-at2x="{{asset('assets/image/logo.webp')}}" style="transform:scale(3)" class="default-logo">
+                    <img src="{{asset('assets/image/logo.webp')}}" data-at2x="{{asset('assets/image/logo.webp')}}" style="transform:scale(3)" class="alt-logo">
+                    <img src="{{asset('assets/image/logo.webp')}}" data-at2x="{{asset('assets/image/logo.webp')}}" style="transform:scale(3)" class="mobile-logo">
                 </a>
             </div>
             <div class="col-auto col-xxl-6 col-lg-8 menu-order">

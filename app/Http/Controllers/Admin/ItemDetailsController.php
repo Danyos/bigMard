@@ -30,7 +30,7 @@ class ItemDetailsController extends Controller
 
         ItemDetailsModel::create($validated);
 
-        return redirect()->route('Admin.item-details.show',$request->product_id)->with('success', 'Item detail created successfully.');
+        return redirect()->route('admin.item-details.show',$request->product_id)->with('success', 'Item detail created successfully.');
     }
 
 

@@ -40,7 +40,9 @@ Route::post('/page-password', function (Illuminate\Http\Request $request) {
     return back()->withErrors(['password' => 'Սխալ գաղտնաբառ']);
 })->name('page.password.check');
 Route::middleware(['pagepassword'])->group(function () {
-Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('Homeindex');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('home.index');
+Route::get('/category/{slug}', [App\Http\Controllers\WelcomeController::class, 'storeShop'])->name('store.Shop');
+Route::get('/catalog/{id}', [App\Http\Controllers\WelcomeController::class, 'storeProduct'])->name('store.product');
 Route::get('/privacy-policy', [App\Http\Controllers\WelcomeController::class, 'policy'])->name('privacy.policy');
 Route::get('/guarantee', [App\Http\Controllers\WelcomeController::class, 'guarantee'])->name('privacy.guarantee');
 Route::get('/payments', [App\Http\Controllers\WelcomeController::class, 'payments'])->name('privacy.payments');

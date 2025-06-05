@@ -33,7 +33,7 @@
 <div class="login-header py-3">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="brand-logo">
-            <a href="{{ route('Homeindex') }}" class="text-decoration-none">
+            <a href="{{ route('home.index') }}" class="text-decoration-none">
                 <span class="text-dark">BigMard</span>
             </a>
         </div>
