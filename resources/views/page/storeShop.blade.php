@@ -32,13 +32,13 @@
                         <li class="grid-item">
                             <div class="shop-box mb-10px">
                                 <div class="shop-image mb-20px">
-                                    <a href="demo-fashion-store-single-product.html">
+                                    <a href="{{route('store.product',$product->id)}}">
                                         <img src="{{asset($product->OtherInformation->coverImages)}}" alt="">
                                         <span class="lable new">New</span>
                                         <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                     </a>
                                     <div class="shop-buttons-wrap">
-                                        <a href="demo-fashion-store-single-product.html" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
+                                        <a href="{{route('store.product',$product->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
                                             <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add to cart</span>
                                         </a>
                                     </div>
@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="shop-footer text-center">
-                                    <a href="demo-fashion-store-single-product.html" class="alt-font text-dark-gray fs-19 fw-500">{{$product->name}}</a>
+                                    <a href="{{route('store.product',$product->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$product->name}}</a>
                                     <div class="price lh-22 fs-16"><del>{{$product->price}} դրամ</del>{{$product->price-($product->price*$product->discount)/100}} դրամ</div>
                                 </div>
                             </div>
