@@ -224,7 +224,7 @@
                                     </div>
                                     <div class="shop-footer text-center">
                                         <a href="{{route('store.product',$allItem->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$allItem->id }}  {{$allItem->name}}</a>
-                                        <div class="price lh-22 fs-16"><del>{{$allItem->price}} դրամ</del>{{$allItem->price-($allItem->price*$best->discount)/100}} դրամ</div>
+                                        <div class="price lh-22 fs-16"><del>{{$allItem->price}} դրամ</del>{{$allItem->price-($allItem->price*$allItem->discount)/100}} դրամ</div>
                                     </div>
                                 </div>
                             </li>
