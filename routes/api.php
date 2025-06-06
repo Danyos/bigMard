@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\api\ProjectController;
+use App\Http\Controllers\api\TaskController;
 use App\Models\Product\ItemDetailsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,8 +26,24 @@ Route::get('/test/for/ani', [\App\Http\Controllers\api\ProductInformationControl
 Route::get('/test/for/daniel', [\App\Http\Controllers\api\ProductInformationController::class, 'daniel']);
 Route::get('/test/for/test', [\App\Http\Controllers\api\ProductInformationController::class, 'test']);
 Route::get('/test/for/access', [\App\Http\Controllers\api\ProductInformationController::class, 'access']);
-Route::apiResource('projects', \App\Http\Controllers\api\ProjectController::class);
-Route::apiResource('tasks', \App\Http\Controllers\api\TaskController::class);
+
+Route::get('/projects/index', [ProjectController::class, 'index']);
+Route::post('/projects/store', [ProjectController::class, 'store']);
+Route::get('/projects/show/{project}', [ProjectController::class, 'show']);
+Route::put('/projects/update/{project}', [ProjectController::class, 'update']);
+Route::patch('/projects/update/{project}', [ProjectController::class, 'update']);
+Route::delete('/projects/delete/{project}', [ProjectController::class, 'destroy']);
+
+// Tasks routes
+Route::get('/tasks/index', [TaskController::class, 'index']);
+Route::post('/tasks/store', [TaskController::class, 'store']);
+Route::get('/tasks/show/{task}', [TaskController::class, 'show']);
+Route::put('/tasks/update/{task}', [TaskController::class, 'update']);
+Route::patch('/tasks/update/{task}', [TaskController::class, 'update']);
+Route::delete('/tasks/delete/{task}', [TaskController::class, 'destroy']);
+
+
+
 Route::middleware('auth.api.key')->group(function () {
     Route::get('/block', [\App\Http\Controllers\api\PageStatusController::class, 'update']);
     Route::get('/info', [\App\Http\Controllers\api\ProductInformationController::class, 'cat']);
