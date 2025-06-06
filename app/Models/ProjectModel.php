@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectModel extends Model
 {
     use HasFactory;
+    protected $table = 'project_models';
     protected $fillable = ['name'];
 
     public function tasks()
