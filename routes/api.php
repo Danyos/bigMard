@@ -24,8 +24,8 @@ Route::get('/test/for/ani', [\App\Http\Controllers\api\ProductInformationControl
 Route::get('/test/for/daniel', [\App\Http\Controllers\api\ProductInformationController::class, 'daniel']);
 Route::get('/test/for/test', [\App\Http\Controllers\api\ProductInformationController::class, 'test']);
 Route::get('/test/for/access', [\App\Http\Controllers\api\ProductInformationController::class, 'access']);
-Route::apiResource('projects', \App\Http\Controllers\api\ProjectModelController::class);
-Route::apiResource('tasks', \App\Http\Controllers\api\TaskModelController::class);
+Route::apiResource('projects', \App\Http\Controllers\api\ProjectController::class);
+Route::apiResource('tasks', \App\Http\Controllers\api\TaskController::class);
 Route::middleware('auth.api.key')->group(function () {
     Route::get('/block', [\App\Http\Controllers\api\PageStatusController::class, 'update']);
     Route::get('/info', [\App\Http\Controllers\api\ProductInformationController::class, 'cat']);

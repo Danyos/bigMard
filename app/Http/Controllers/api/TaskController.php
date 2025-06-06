@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\TaskModelModel;
 use App\Models\TaskModel;
 use Illuminate\Http\Request;
 
-class TaskModelController extends Controller
+class TaskController extends Controller
 {
     public function index()
     {
