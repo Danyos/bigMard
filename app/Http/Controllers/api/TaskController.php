@@ -20,7 +20,7 @@ class TaskController extends Controller
             'value' => 'required|string',
             'status' => 'in:completed,pending,in_progress',
         ]);
-dd($request->all());
+
         return TaskModel::create([
             'project_id' => $request->project_id,
             'value' => $request->value,
