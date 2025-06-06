@@ -21,7 +21,11 @@ class TaskController extends Controller
             'status' => 'in:completed,pending,in_progress',
         ]);
 
-        return TaskModel::create($request->only('project_id', 'value', 'status'));
+        return TaskModel::create([
+            'project_id' => $request->project_id,
+            'value' => $request->value,
+            'status' => $request->status
+        ]);
     }
 
     public function show(TaskModel $TaskModel)
