@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Models\ProjectModel;
+use App\Models\TaskModel;
 use Illuminate\Http\Request;
 use \App\Http\Controllers\Controller;
 
@@ -20,9 +21,9 @@ class ProjectController extends Controller
 
     public function show($id)
     {
+        $tasks=TaskModel::where('project_id',$id)->get();
 
-
-        return $id;
+        return response()->json($tasks);
     }
 
     public function update(Request $request, ProjectModel $ProjectModel)
