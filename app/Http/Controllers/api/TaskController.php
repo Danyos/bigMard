@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Http\Controllers\api;
+
+use App\Http\Controllers\Controller;
+use App\Models\TaskModelModel;
+use App\Models\TaskModel;
+use Illuminate\Http\Request;
+
+class TaskModelController extends Controller
+{
+    public function index()
+    {
+        return TaskModel::with('project')->get();
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'project_id' => 'required|exists:projects,id',
+            'value' => 'required|string',
+            'status' => 'in:completed,pending,in_progress',
+        ]);
+
+        return TaskModel::create($request->only('project_id', 'value', 'status'));
+    }
+
+    public function show(TaskModel $TaskModel)
+    {
+        return $TaskModel->load('project');
+    }
+
+    public function update(Request $request, TaskModel $TaskModel)
+    {
+        $TaskModel->update($request->only('project_id', 'value', 'status'));
+        return $TaskModel;
+    }
+
+    public function destroy(TaskModel $TaskModel)
+    {
+        $TaskModel->delete();
+        return response()->noContent();
+    }
+}
+
