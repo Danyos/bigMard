@@ -18,9 +18,11 @@ class ProjectController extends Controller
         return ProjectModel::create($request->only('name'));
     }
 
-    public function show(ProjectModel $ProjectModel)
+    public function show($id)
     {
-        return $ProjectModel;
+
+
+        return $id;
     }
 
     public function update(Request $request, ProjectModel $ProjectModel)
