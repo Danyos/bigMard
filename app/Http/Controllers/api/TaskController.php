@@ -16,9 +16,9 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'project_id' => 'required|exists:projects,id',
+            'project_id' => 'required',
             'value' => 'required|string',
-            'status' => 'in:completed,pending,in_progress',
+            'status' => 'in:completed,pending,in_progress|nullable',
         ]);
 
         return TaskModel::create([
