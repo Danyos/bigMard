@@ -8,8 +8,8 @@
             <div class="row align-items-center">
                 <div class="col-12 breadcrumb breadcrumb-style-01 fs-14">
                     <ul>
-                        <li><a href="demo-fashion-store.html">Home</a></li>
-                        <li><a href="demo-fashion-store-shop.html">Shop</a></li>
+                        <li><a href="{{route('home.index')}}">Գլխավոր</a></li>
+                        <li><a href="{{route('store.Shop',$category->slug)}}">{{$category->name}}</a></li>
                         <li>Relaxed corduroy shirt</li>
                     </ul>
                 </div>
@@ -68,8 +68,8 @@
                                     <i class="bi bi-star-fill text-golden-yellow"></i>
                                 </a>
                             </div>
-                            <a href="#tab" class="me-25px text-dark-gray fw-500 section-link xs-me-0">165 Reviews</a>
-                            <div><span class="text-dark-gray fw-500">SKU: </span>M492300</div>
+                            <a href="#tab" class="me-25px text-dark-gray fw-500 section-link xs-me-0">{{$feedbacks->count()}} Reviews</a>
+                            <div><span class="text-dark-gray fw-500">SKU: </span>M4923{{$item->id}}</div>
                         </div>
                         <div class="product-price mb-10px">
                             <span class="text-dark-gray fs-28 xs-fs-24 fw-700 ls-minus-1px">
@@ -82,50 +82,19 @@
                         <p>{{$item->OtherInformation->imgText}}</p>
                         <div class="d-flex align-items-center flex-column flex-sm-row mb-20px position-relative">
 
-                            <a href="demo-fashion-store-cart.html"
+                            <button data-bs-toggle="modal" data-bs-target="#customModal"
                                class="btn btn-cart btn-extra-large btn-switch-text btn-box-shadow btn-none-transform btn-dark-gray left-icon btn-round-edge border-0 me-15px xs-me-0 order-3 order-sm-2">
                                     <span>
                                         <span><i class="feather icon-feather-shopping-bag"></i></span>
                                         <span class="btn-double-text ls-0px" data-text="Պատվիրել">Պատվիրել Հիմա</span>
                                     </span>
-                            </a>
+                            </button>
                             <a href="#"
                                class="wishlist d-flex align-items-center justify-content-center border border-radius-5px border-color-extra-medium-gray order-2 order-sm-3">
                                 <i class="feather icon-feather-heart icon-small text-dark-gray"></i>
                             </a>
                         </div>
-                        <div class="row mb-20px">
-                            <div class="col-auto icon-with-text-style-08">
-                                <div class="feature-box feature-box-left-icon-middle d-inline-flex align-middle">
-                                    <div class="feature-box-icon me-10px">
-                                        <i class="feather icon-feather-repeat align-middle text-dark-gray"></i>
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <a href="#" class="alt-font fw-500 text-dark-gray d-block">Compare</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-auto icon-with-text-style-08">
-                                <div class="feature-box feature-box-left-icon-middle d-inline-flex align-middle">
-                                    <div class="feature-box-icon me-10px">
-                                        <i class="feather icon-feather-mail align-middle text-dark-gray"></i>
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <a href="#" class="alt-font fw-500 text-dark-gray d-block">Ask a question</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-auto icon-with-text-style-08">
-                                <div class="feature-box feature-box-left-icon-middle d-inline-flex align-middle">
-                                    <div class="feature-box-icon me-10px">
-                                        <i class="feather icon-feather-share-2 align-middle text-dark-gray"></i>
-                                    </div>
-                                    <div class="feature-box-content">
-                                        <a href="#" class="alt-font fw-500 text-dark-gray d-block">Share</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="mb-20px h-1px w-100 bg-extra-medium-gray d-block"></div>
                         <div class="row mb-15px">
                             <div class="col-12 icon-with-text-style-08">
@@ -150,24 +119,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div
-                            class="bg-very-light-gray ps-30px pe-30px pt-25px pb-25px mb-20px xs-p-25px border-radius-4px">
-                            <span class="alt-font fs-17 fw-500 text-dark-gray mb-15px d-block lh-initial">Guarantee safe and secure checkout</span>
-                            <div>
-                                <a href="#"><img src="images/visa.svg" class="h-30px me-5px mb-5px" alt=""></a>
-                                <a href="#"><img src="images/mastercard.svg" class="h-30px me-5px mb-5px" alt=""></a>
-                                <a href="#"><img src="images/american-express.svg" class="h-30px me-5px mb-5px" alt=""></a>
-                                <a href="#"><img src="images/discover.svg" class="h-30px me-5px mb-5px" alt=""></a>
-                                <a href="#"><img src="images/diners-club.svg" class="h-30px me-5px mb-5px" alt=""></a>
-                                <a href="#"><img src="images/union-pay.svg" class="h-30px" alt=""></a>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="w-100 d-block"><span class="text-dark-gray alt-font fw-500">Category:</span> <a
-                                    href="#">Fashion,</a> <a href="#">Woman</a></div>
-                            <div><span class="text-dark-gray alt-font fw-500">Tags: </span><a href="#">Shirts,</a> <a
-                                    href="#">Cotton,</a> <a href="#">Printed</a></div>
-                        </div>
+
                 </div>
             </div>
         </div>
@@ -239,278 +191,93 @@
                         <!-- end tab content -->
                         <!-- start tab content -->
                         <div class="tab-pane fade in" id="tab_five4">
-                            <div class="row align-items-center mb-6 sm-mb-10">
-                                <div class="col-lg-4 col-md-12 col-sm-7 md-mb-30px text-center text-lg-start">
-                                    <h5 class="alt-font text-dark-gray fw-500 mb-0 w-85 lg-w-100"><span class="fw-600">25,000+</span>
-                                        people are like our product and say good story.</h5>
-                                </div>
-                                <div
-                                    class="col-lg-2 col-md-4 col-sm-5 text-center sm-mb-20px p-0 md-ps-15px md-pe-15px">
-                                    <div class="border-radius-4px bg-very-light-gray p-30px xl-p-20px">
-                                        <h2 class="mb-5px alt-font text-dark-gray fw-600">4.9</h2>
-                                        <span class="text-golden-yellow icon-small d-block ls-minus-1px mb-5px">
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                            </span>
-                                        <span
-                                            class="ps-15px pe-15px pt-10px pb-10px lh-normal bg-dark-gray text-white fs-12 fw-600 text-uppercase border-radius-4px d-inline-block text-center">2,488 Reviews</span>
-                                    </div>
-                                </div>
-                                <div class="col-9 col-lg-4 col-md-5 col-sm-8 progress-bar-style-02">
-                                    <div class="ps-20px md-ps-0">
-                                        <div class="text-dark-gray mb-15px fw-600">Average customer ratings</div>
-                                        <!-- start progress bar item -->
-                                        <div class="progress mb-20px border-radius-6px">
-                                            <div class="progress-bar bg-green m-0" role="progressbar" aria-valuenow="95"
-                                                 aria-valuemin="0" aria-valuemax="100" aria-label="rating"></div>
-                                        </div>
-                                        <!-- end progress bar item -->
-                                        <!-- start progress bar item -->
-                                        <div class="progress mb-20px border-radius-6px">
-                                            <div class="progress-bar bg-green m-0" role="progressbar" aria-valuenow="66"
-                                                 aria-valuemin="0" aria-valuemax="100" aria-label="rating"></div>
-                                        </div>
-                                        <!-- end progress bar item -->
-                                        <!-- start progress bar item -->
-                                        <div class="progress mb-20px border-radius-6px">
-                                            <div class="progress-bar bg-green m-0" role="progressbar" aria-valuenow="40"
-                                                 aria-valuemin="0" aria-valuemax="100" aria-label="rating"></div>
-                                        </div>
-                                        <!-- end progress bar item -->
-                                        <!-- start progress bar item -->
-                                        <div class="progress mb-20px border-radius-6px">
-                                            <div class="progress-bar bg-green m-0" role="progressbar" aria-valuenow="25"
-                                                 aria-valuemin="0" aria-valuemax="100" aria-label="rating"></div>
-                                        </div>
-                                        <!-- end progress bar item -->
-                                        <!-- start progress bar item -->
-                                        <div class="progress sm-mb-0 border-radius-6px">
-                                            <div class="progress-bar bg-green m-0" role="progressbar" aria-valuenow="05"
-                                                 aria-valuemin="0" aria-valuemax="100" aria-label="rating"></div>
-                                        </div>
-                                        <!-- end progress bar item -->
-                                    </div>
-                                </div>
-                                <div class="col-3 col-lg-2 col-md-3 col-sm-4 mt-45px">
-                                    <div class="mb-15px lh-0 xs-lh-normal xs-mb-10px">
-                                            <span
-                                                class="text-golden-yellow fs-15 ls-minus-1px d-none d-sm-inline-block">
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                            </span>
-                                        <span class="fs-13 text-dark-gray fw-600 ms-10px xs-ms-0">80%</span>
-                                    </div>
-                                    <div class="mb-15px lh-0 xs-lh-normal xs-mb-10px">
-                                            <span
-                                                class="text-golden-yellow fs-15 ls-minus-1px d-none d-sm-inline-block">
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                            </span>
-                                        <span class="fs-13 text-dark-gray fw-600 ms-10px xs-ms-0">10%</span>
-                                    </div>
-                                    <div class="mb-15px lh-0 xs-lh-normal xs-mb-10px">
-                                            <span
-                                                class="text-golden-yellow fs-15 ls-minus-1px d-none d-sm-inline-block">
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                            </span>
-                                        <span class="fs-13 text-dark-gray fw-600 ms-10px xs-ms-0">05%</span>
-                                    </div>
-                                    <div class="mb-15px lh-0 xs-lh-normal xs-mb-10px">
-                                            <span
-                                                class="text-golden-yellow fs-15 ls-minus-1px d-none d-sm-inline-block">
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                            </span>
-                                        <span class="fs-13 text-dark-gray fw-600 ms-10px xs-ms-0">03%</span>
-                                    </div>
-                                    <div class="lh-0 xs-lh-normal">
-                                            <span
-                                                class="text-golden-yellow fs-15 ls-minus-1px d-none d-sm-inline-block">
-                                                <i class="bi bi-star-fill"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                                <i class="feather icon-feather-star"></i>
-                                            </span>
-                                        <span class="fs-13 text-dark-gray fw-600 ms-10px xs-ms-0">02%</span>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row g-0 mb-4 md-mb-35px">
+                                @foreach($feedbacks as $feedback)
                                 <div
                                     class="col-12 border-bottom border-color-extra-medium-gray pb-40px mb-40px xs-pb-30px xs-mb-30px">
                                     <div class="d-block d-md-flex w-100 align-items-center">
                                         <div class="w-300px md-w-250px sm-w-100 sm-mb-10px text-center">
-                                            <img src="https://placehold.co/200x200"
+                                            <img src="{{asset('assets/image/user_icon.avif')}}"
                                                  class="rounded-circle w-90px mb-10px" alt="">
-                                            <span class="text-dark-gray fw-600 d-block">Herman miller</span>
-                                            <div class="fs-14 lh-18">06 April 2023</div>
+                                            <span class="text-dark-gray fw-600 d-block">{{$feedback->name}}</span>
+
                                         </div>
                                         <div
                                             class="w-100 last-paragraph-no-margin sm-ps-0 position-relative text-center text-md-start">
-                                                <span
-                                                    class="text-golden-yellow ls-minus-1px mb-5px sm-me-10px sm-mb-0 d-inline-block d-md-block">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </span>
+                                           <span class="text-golden-yellow">
+    @for ($i = 1; $i <= 5; $i++)
+                                                   @if ($i <= $feedback->star)
+                                                       <i class="bi bi-star-fill"></i> {{-- Լիքը աստղ --}}
+                                                   @else
+                                                       <i class="bi bi-star"></i> {{-- Դատարկ աստղ --}}
+                                                   @endif
+                                               @endfor
+</span>
+
                                             <a href="#"
                                                class="w-65px bg-light-red border-radius-15px fs-13 text-dark-gray fw-600 text-center position-absolute sm-position-relative d-inline-block d-md-block right-0px top-0px"><i
                                                     class="fa-solid fa-heart text-red me-5px"></i><span>08</span></a>
-                                            <p class="w-85 sm-w-100 sm-mt-15px">Lorem ipsum dolor sit sed do eiusmod
-                                                tempor incididunt labore enim ad minim veniam, quis nostrud exercitation
-                                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                                nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                                            <p class="w-85 sm-w-100 sm-mt-15px">{{$feedback->comment}}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="col-12 border-bottom border-color-extra-medium-gray pb-40px mb-40px xs-pb-30px xs-mb-30px">
-                                    <div class="d-block d-md-flex w-100 align-items-center">
-                                        <div class="w-300px md-w-250px sm-w-100 sm-mb-10px text-center">
-                                            <img src="https://placehold.co/200x200"
-                                                 class="rounded-circle w-90px mb-10px" alt="">
-                                            <span class="text-dark-gray fw-600 d-block">Wilbur haddock</span>
-                                            <div class="fs-14 lh-18">26 April 2023</div>
-                                        </div>
-                                        <div
-                                            class="w-100 last-paragraph-no-margin sm-ps-0 position-relative text-center text-md-start">
-                                                <span
-                                                    class="text-golden-yellow ls-minus-1px mb-5px sm-me-10px sm-mb-0 d-inline-block d-md-block">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </span>
-                                            <a href="#"
-                                               class="w-65px bg-light-red border-radius-15px fs-13 text-dark-gray fw-600 text-center position-absolute sm-position-relative d-inline-block d-md-block right-0px top-0px"><i
-                                                    class="fa-solid fa-heart text-red me-5px"></i><span>06</span></a>
-                                            <p class="w-85 sm-w-100 sm-mt-15px">Lorem ipsum dolor sit sed do eiusmod
-                                                tempor incididunt labore enim ad minim veniamnisi ut aliquip ex ea
-                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                                occaecat cupidatat non proident.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col-12 border-bottom border-color-extra-medium-gray pb-40px mb-40px xs-pb-30px md-mb-25px">
-                                    <div class="d-block d-md-flex w-100 align-items-center">
-                                        <div class="w-300px md-w-250px sm-w-100 sm-mb-10px text-center">
-                                            <img src="https://placehold.co/200x200"
-                                                 class="rounded-circle w-90px mb-10px" alt="">
-                                            <span class="text-dark-gray fw-600 d-block">Colene landin</span>
-                                            <div class="fs-14 lh-18">28 April 2023</div>
-                                        </div>
-                                        <div
-                                            class="w-100 last-paragraph-no-margin sm-ps-0 position-relative text-center text-md-start">
-                                                <span
-                                                    class="text-golden-yellow ls-minus-1px mb-5px sm-me-10px sm-mb-0 d-inline-block d-md-block">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </span>
-                                            <a href="#"
-                                               class="w-65px bg-light-red border-radius-15px fs-13 text-dark-gray fw-600 text-center position-absolute sm-position-relative d-inline-block d-md-block right-0px top-0px"><i
-                                                    class="fa-regular fa-heart text-red me-5px"></i><span>00</span></a>
-                                            <p class="w-85 sm-w-100 sm-mt-15px">Lorem ipsum dolor sit sed do eiusmod
-                                                tempor incididunt labore enim adquis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 last-paragraph-no-margin text-center">
-                                    <a href="#"
-                                       class="btn btn-link btn-hover-animation-switch btn-extra-large text-dark-gray">
-                                            <span>
-                                                <span class="btn-text">Show more reviews</span>
-                                                <span class="btn-icon"><i class="fa-solid fa-chevron-down"></i></span>
-                                                <span class="btn-icon"><i class="fa-solid fa-chevron-down"></i></span>
-                                            </span>
-                                    </a>
-                                </div>
+                                @endforeach
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
                                     <div class="p-7 lg-p-5 sm-p-7 bg-very-light-gray">
                                         <div class="row justify-content-center mb-30px sm-mb-10px">
                                             <div class="col-md-9 text-center">
-                                                <h4 class="alt-font text-dark-gray fw-500 mb-15px">Add a review</h4>
+                                                <h4 class="alt-font text-dark-gray fw-500 mb-15px">Ավելացնել Կարծիք</h4>
                                             </div>
                                         </div>
-                                        <form action="email-templates/contact-form.php" method="post"
-                                              class="row contact-form-style-02">
+                                        <form id="feedbackForm" class="row contact-form-style-02" novalidate>
                                             <div class="col-lg-5 col-md-6 mb-20px">
-                                                <label class="form-label mb-15px">Your name*</label>
-                                                <input class="input-name border-radius-4px form-control required"
-                                                       type="text" name="name" placeholder="Enter your name">
+                                                <label class="form-label mb-15px">Ձեր անունը*</label>
+                                                <input type="text" class="form-control border-radius-4px" id="fbName" placeholder="Մուտքագրեք ձեր անունը">
+                                                <div class="text-danger" id="errName"></div>
                                             </div>
+
                                             <div class="col-lg-5 col-md-6 mb-20px">
-                                                <label class="form-label mb-15px">Your email address*</label>
-                                                <input class="border-radius-4px form-control required" type="email"
-                                                       name="email" placeholder="Enter your email address">
+                                                <label class="form-label mb-15px">Էլ․ հասցե*</label>
+                                                <input type="email" class="form-control border-radius-4px" id="fbEmail" placeholder="Մուտքագրեք ձեր էլ․ հասցեն">
+                                                <div class="text-danger" id="errEmail"></div>
                                             </div>
+
                                             <div class="col-lg-2 mb-20px">
-                                                <label class="form-label">Your rating*</label>
-                                                <div>
-                                                        <span class="ls-minus-1px icon-small d-block mt-20px md-mt-0">
-                                                            <i class="feather icon-feather-star text-golden-yellow"></i>
-                                                            <i class="feather icon-feather-star text-golden-yellow"></i>
-                                                            <i class="feather icon-feather-star text-golden-yellow"></i>
-                                                            <i class="feather icon-feather-star text-golden-yellow"></i>
-                                                            <i class="feather icon-feather-star text-golden-yellow"></i>
-                                                        </span>
+                                                <label class="form-label">Ձեր գնահատականը*</label>
+                                                <div id="starRating" class="mt-2 text-golden-yellow fs-5">
+                                                    <i class="bi bi-star" data-value="1"></i>
+                                                    <i class="bi bi-star" data-value="2"></i>
+                                                    <i class="bi bi-star" data-value="3"></i>
+                                                    <i class="bi bi-star" data-value="4"></i>
+                                                    <i class="bi bi-star" data-value="5"></i>
                                                 </div>
+                                                <div class="text-danger" id="errStar"></div>
                                             </div>
+
                                             <div class="col-md-12 mb-20px">
-                                                <label class="form-label mb-15px">Your review</label>
-                                                <textarea class="border-radius-4px form-control" cols="40" rows="4"
-                                                          name="comment" placeholder="Your message"></textarea>
+                                                <label class="form-label mb-15px">Ձեր կարծիքը</label>
+                                                <textarea class="form-control border-radius-4px" rows="4" id="fbComment" placeholder="Գրեք ձեր կարծիքը այստեղ..."></textarea>
+                                                <div class="text-danger" id="errComment"></div>
                                             </div>
-                                            <div class="col-lg-9 md-mb-25px">
-                                                <div
-                                                    class="position-relative terms-condition-box text-start is-invalid mt-10px">
-                                                    <label class="d-inline-block">
-                                                        <input type="checkbox" name="terms_condition"
-                                                               id="terms_condition" value="1"
-                                                               class="terms-condition check-box align-middle required">
-                                                        <span class="box fs-15">I accept the crafto terms and conditions and I have read the privacy policy.</span>
+
+                                            <div class="col-lg-9 mb-3 d-flex">
+                                                <div class="form-check d-flex align-items-center">
+                                                    <input class="form-check-input me-2" type="checkbox" id="fbTerms">
+                                                    <label class="form-check-label text-muted" for="fbTerms">
+                                                        Համաձայն եմ պայմաններին և գաղտնիության քաղաքականությանը։
                                                     </label>
                                                 </div>
+                                                <div class="text-danger" id="errTerms"></div>
                                             </div>
+
                                             <div class="col-lg-3 text-start text-lg-end">
-                                                <input type="hidden" name="redirect" value="">
-                                                <button
-                                                    class="btn btn-dark-gray btn-small btn-box-shadow btn-round-edge submit"
-                                                    type="submit">Submit review
-                                                </button>
+                                                <button type="submit" class="btn btn-dark btn-sm">Ուղարկել կարծիքը</button>
                                             </div>
+
                                             <div class="col-12">
-                                                <div class="form-results mt-20px d-none"></div>
+                                                <div id="fbSuccessMsg" class="alert alert-success mt-3 d-none">✅ Ձեր կարծիքը հաջողությամբ ուղարկվեց։</div>
                                             </div>
                                         </form>
                                     </div>
@@ -529,7 +296,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Related <span class="text-highlight fw-600">products<span
+                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Նախընտրելի <span class="text-highlight fw-600">Ապրանքներ<span
                                 class="bg-base-color h-5px bottom-2px"></span></span></h2>
                 </div>
             </div>
@@ -537,187 +304,257 @@
                 <div class="col-12">
                     <ul class="shop-modern shop-wrapper grid grid-4col md-grid-3col sm-grid-2col xs-grid-1col gutter-extra-large text-center">
                         <li class="grid-sizer"></li>
-                        <!-- start shop item -->
-                        <li class="grid-item">
-                            <div class="shop-box mb-10px">
-                                <div class="shop-image mb-20px">
-                                    <a href="demo-fashion-store-single-product.html">
-                                        <img src="https://placehold.co/600x765" alt="">
-                                        <span class="lable new">New</span>
-                                        <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                    </a>
-                                    <div class="shop-buttons-wrap">
-                                        <a href="demo-fashion-store-single-product.html"
-                                           class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span
-                                                class="quick-view-text button-text">Add to cart</span>
+                        @foreach($other as $product)
+
+
+                            <!-- start shop item -->
+                            <li class="grid-item">
+                                <div class="shop-box mb-10px">
+                                    <div class="shop-image mb-20px">
+                                        <a href="{{route('store.product',$product->id)}}">
+                                            <img src="{{asset($product->OtherInformation->coverImages)}}" alt="">
+                                            <span class="lable new">New</span>
+                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                         </a>
+                                        <div class="shop-buttons-wrap">
+                                            <a href="{{route('store.product',$product->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
+                                                <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add to cart</span>
+                                            </a>
+                                        </div>
+                                        <div class="shop-hover d-flex justify-content-center">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="feather icon-feather-heart fs-16"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i class="feather icon-feather-eye fs-16"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="shop-hover d-flex justify-content-center">
-                                        <ul>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left"
-                                                   title="Add to wishlist"><i
-                                                        class="feather icon-feather-heart fs-16"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                                        class="feather icon-feather-eye fs-16"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="shop-footer text-center">
-                                    <a href="demo-fashion-store-single-product.html"
-                                       class="alt-font text-dark-gray fs-19 fw-500">Textured sweater</a>
-                                    <div class="price lh-22 fs-16">
-                                        <del>$200.00</del>
-                                        $189.00
+                                    <div class="shop-footer text-center">
+                                        <a href="{{route('store.product',$product->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$product->name}}</a>
+                                        <div class="price lh-22 fs-16"><del>{{$product->price}} դրամ</del>{{$product->price-($product->price*$product->discount)/100}} դրամ</div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <!-- end shop item -->
-                        <!-- start shop item -->
-                        <li class="grid-item">
-                            <div class="shop-box mb-10px">
-                                <div class="shop-image mb-20px">
-                                    <a href="demo-fashion-store-single-product.html">
-                                        <img src="https://placehold.co/600x765" alt="">
-                                        <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                    </a>
-                                    <div class="shop-buttons-wrap">
-                                        <a href="demo-fashion-store-single-product.html"
-                                           class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span
-                                                class="quick-view-text button-text">Add to cart</span>
-                                        </a>
-                                    </div>
-                                    <div class="shop-hover d-flex justify-content-center">
-                                        <ul>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left"
-                                                   title="Add to wishlist"><i
-                                                        class="feather icon-feather-heart fs-16"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                                        class="feather icon-feather-eye fs-16"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="shop-footer text-center">
-                                    <a href="demo-fashion-store-single-product.html"
-                                       class="alt-font text-dark-gray fs-19 fw-500">Traveller shirt</a>
-                                    <div class="price lh-22 fs-16">
-                                        <del>$350.00</del>
-                                        $289.00
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end shop item -->
-                        <!-- start shop item -->
-                        <li class="grid-item">
-                            <div class="shop-box mb-10px">
-                                <div class="shop-image mb-20px">
-                                    <a href="demo-fashion-store-single-product.html">
-                                        <img src="https://placehold.co/600x765" alt="">
-                                        <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                    </a>
-                                    <div class="shop-buttons-wrap">
-                                        <a href="demo-fashion-store-single-product.html"
-                                           class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span
-                                                class="quick-view-text button-text">Add to cart</span>
-                                        </a>
-                                    </div>
-                                    <div class="shop-hover d-flex justify-content-center">
-                                        <ul>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left"
-                                                   title="Add to wishlist"><i
-                                                        class="feather icon-feather-heart fs-16"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                                        class="feather icon-feather-eye fs-16"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="shop-footer text-center">
-                                    <a href="demo-fashion-store-single-product.html"
-                                       class="alt-font text-dark-gray fs-19 fw-500">Crewneck sweatshirt</a>
-                                    <div class="price lh-22 fs-16">
-                                        <del>$220.00</del>
-                                        $199.00
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end shop item -->
-                        <!-- start shop item -->
-                        <li class="grid-item">
-                            <div class="shop-box mb-10px">
-                                <div class="shop-image mb-20px">
-                                    <a href="demo-fashion-store-single-product.html">
-                                        <img src="https://placehold.co/600x765" alt="">
-                                        <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                    </a>
-                                    <div class="shop-buttons-wrap">
-                                        <a href="demo-fashion-store-single-product.html"
-                                           class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span
-                                                class="quick-view-text button-text">Add to cart</span>
-                                        </a>
-                                    </div>
-                                    <div class="shop-hover d-flex justify-content-center">
-                                        <ul>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left"
-                                                   title="Add to wishlist"><i
-                                                        class="feather icon-feather-heart fs-16"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                   class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                                        class="feather icon-feather-eye fs-16"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="shop-footer text-center">
-                                    <a href="demo-fashion-store-single-product.html"
-                                       class="alt-font text-dark-gray fs-19 fw-500">Skinny trousers</a>
-                                    <div class="price lh-22 fs-16">
-                                        <del>$300.00</del>
-                                        $259.00
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end shop item -->
+                            </li>
+                            <!-- end shop item -->
+                        @endforeach
+
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- end section -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="customModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 overflow-hidden border-0">
+
+                <!-- Վերևի գովազդային նկար -->
+                <div style="background-color: #fff;">
+                    <img src="{{asset($item->OtherInformation->coverImages)}}" class="w-100" alt="Դանիսոֆտ գովազդ" />
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Փակել" onclick="closeModal()"></button>
+                </div>
+
+                <!-- Ստորև՝ վերնագիր, ֆորմա -->
+                <div class="p-4" style="background-color: #2A2D34;" id="formSection">
+                    <h5 class="text-white text-center mb-4">Անլար ականջակալներ AirPods Pro 2</h5>
+                    <form onsubmit="submitForm(event)">
+                        <div class="mb-3">
+                            <input type="text" class="form-control rounded-pill bg-dark text-white border-secondary" placeholder="Անուն Ազգանուն" id="formName" />
+                            <div class="form-text text-danger" id="nameError"></div>
+                        </div>
+                        <input type="hidden" id="productId" value="{{ $item->id }}">
+                        <div class="mb-3">
+                            <input type="tel" class="form-control rounded-pill bg-dark text-white border-secondary" placeholder="Հեռախոսահամար" id="formPhone" />
+                            <div class="form-text text-danger" id="phoneError"></div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-warning rounded-pill px-5 fw-bold">ԳՐԱՆՑՎԵԼ</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="p-4 text-center d-none" id="messageSection" style="background-color: #2A2D34; color: white;">
+                    <h4 id="responseMessage">✅ Շնորհակալություն</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+@section('js')
+    <script>
+        function closeModal() {
+            const modalEl = document.getElementById('customModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+
+            if (modalInstance) {
+                modalInstance.hide();
+            } else {
+                modalEl.classList.remove('show', 'd-block');
+                modalEl.setAttribute('aria-hidden', 'true');
+                const backdrop = document.querySelector('.modal-backdrop');
+                if (backdrop) backdrop.remove();
+            }
+        }
+
+        function showMessage(text, type = "success") {
+            const msgEl = document.getElementById('responseMessage');
+            const formSection = document.getElementById('formSection');
+            const msgSection = document.getElementById('messageSection');
+
+            console.log({ msgEl, formSection, msgSection }); // ✅ սա ցույց կտա՝ ով է null
+
+            msgEl.textContent = (type === "success" ? "✅ " : "❌ ") + text;
+            formSection.classList.add("d-none");
+            msgSection.classList.remove("d-none");
+
+            setTimeout(() => {
+                closeModal();
+                // reset
+                formSection.classList.remove("d-none");
+                msgSection.classList.add("d-none");
+                document.getElementById('formName').value = "";
+                document.getElementById('formPhone').value = "";
+            }, 3000);
+        }
+        function submitForm(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('formName').value.trim();
+            const rawPhone = document.getElementById('formPhone').value;
+            const phone = rawPhone.replace(/[\s\-]/g, '').trim();
+            const id = document.getElementById('productId').value;
+
+            let hasError = false;
+            document.getElementById('nameError').textContent = "";
+            document.getElementById('phoneError').textContent = "";
+
+            if (!name) {
+                document.getElementById('nameError').textContent = "Անունը պարտադիր է";
+                hasError = true;
+            }
+
+            if (!phone) {
+                document.getElementById('phoneError').textContent = "Հեռախոսահամարը պարտադիր է";
+                hasError = true;
+            } else if (!/^\+?\d{9,15}$/.test(phone)) {
+                document.getElementById('phoneError').textContent = "Մուտքագրեք վավեր հեռախոսահամար";
+                hasError = true;
+            }
+
+            if (!hasError) {
+                fetch("/order/product", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({ name, phone, id })
+                })
+                    .then(res => {
+                        if (!res.ok) throw new Error();
+                        return res.json();
+                    })
+                    .then(data => {
+                        showMessage("Շնորհակալություն, շուտով կապ կհաստատենք։", "success");
+                    })
+                    .catch(err => {
+                        showMessage("Տեղի ունեցավ սխալ։ Խնդրում ենք փորձել կրկին։", "error");
+                    });
+            }
+        }
+    </script>
+
+    <script>
+        let selectedStar = 0;
+
+        // Աստղիկների ընտրում
+        document.querySelectorAll("#starRating i").forEach(star => {
+            star.addEventListener("click", () => {
+                selectedStar = star.dataset.value;
+                document.querySelectorAll("#starRating i").forEach(s => {
+                    s.classList.remove("bi-star-fill");
+                    s.classList.add("bi-star");
+                });
+                for (let i = 0; i < selectedStar; i++) {
+                    document.querySelectorAll("#starRating i")[i].classList.add("bi-star-fill");
+                    document.querySelectorAll("#starRating i")[i].classList.remove("bi-star");
+                }
+            });
+        });
+
+        // Ֆորմայի ուղարկում
+        document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("fbName").value.trim();
+            const email = document.getElementById("fbEmail").value.trim();
+            const comment = document.getElementById("fbComment").value.trim();
+            const terms = document.getElementById("fbTerms").checked;
+            const id = document.getElementById('productId').value;
+
+            // Մաքրել հին սխալները
+            ["errName", "errEmail", "errComment", "errStar", "errTerms"].forEach(id => {
+                document.getElementById(id).textContent = "";
+            });
+
+            // Վավերացում
+            let hasError = false;
+            if (!name) { document.getElementById("errName").textContent = "Անունը պարտադիր է"; hasError = true; }
+            if (!email) { document.getElementById("errEmail").textContent = "Էլ․ հասցեն պարտադիր է"; hasError = true; }
+            if (!selectedStar) { document.getElementById("errStar").textContent = "Խնդրում ենք ընտրել գնահատական"; hasError = true; }
+            if (!comment) { document.getElementById("errComment").textContent = "Խնդրում ենք գրեք կարծիք"; hasError = true; }
+            if (!terms) { document.getElementById("errTerms").textContent = "Պետք է համաձայնեք պայմաններին"; hasError = true; }
+
+            if (hasError) return;
+
+            // AJAX ուղարկում
+            fetch("/feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    comment,
+                    star: selectedStar,
+                    item_id:id
+
+                })
+            })
+                .then(res => {
+                    if (!res.ok) throw res;
+                    return res.json();
+                })
+                .then(data => {
+                    document.getElementById("fbSuccessMsg").classList.remove("d-none");
+                    document.getElementById("feedbackForm").reset();
+                    selectedStar = 0;
+                    document.querySelectorAll("#starRating i").forEach(s => {
+                        s.classList.remove("bi-star-fill");
+                        s.classList.add("bi-star");
+                    });
+                })
+                .catch(async err => {
+                    const errorData = await err.json();
+                    if (errorData.errors) {
+                        if (errorData.errors.name) document.getElementById("errName").textContent = errorData.errors.name[0];
+                        if (errorData.errors.email) document.getElementById("errEmail").textContent = errorData.errors.email[0];
+                        if (errorData.errors.comment) document.getElementById("errComment").textContent = errorData.errors.comment[0];
+                        if (errorData.errors.star) document.getElementById("errStar").textContent = errorData.errors.star[0];
+                    } else {
+                        alert("Տեղի ունեցավ սխալ, փորձեք ավելի ուշ։");
+                    }
+                });
+        });
+    </script>
+
 @endsection

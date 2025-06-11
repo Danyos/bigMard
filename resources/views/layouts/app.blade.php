@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="ThemeZaa">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png">
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/vendors.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/icon.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/modal.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/demos/fashion-store/fashion-store.css')}}" />
 </head>
@@ -43,7 +46,7 @@
             <div class="col-auto col-xxl-3 col-lg-2 menu-logo">
                 <div class="header-icon d-none d-lg-flex">
                     <div class="widget-text icon alt-font">
-                        <a href="demo-fashion-store-contact.html"><i class="feather icon-feather-map-pin d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">Find stores</span></a>
+                        <a href="{{route('home.index')}}"><i class="feather icon-feather-map-pin d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">Find stores</span></a>
                     </div>
                     <div class="widget-text icon alt-font">
                         <a href="https://www.instagram.com/" target="_blank"><i class="feather icon-feather-instagram d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">100k Followers</span></a>
@@ -65,7 +68,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav alt-font navbar-left justify-content-end">
                         <li class="nav-item">
-                            <a href="demo-fashion-store.html" class="nav-link">Home</a>
+                            <a href="{{route('home.index')}}" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item dropdown submenu">
                             <a href="demo-fashion-store-shop.html" class="nav-link">Shop</a>
@@ -310,7 +313,7 @@
             <!-- start footer column -->
             <div class="col">
                 <ul class="footer-navbar text-center text-md-end">
-                    <li class="nav-item"><a href="demo-fashion-store.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{route('home.index')}}l" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="demo-fashion-store-shop.html" class="nav-link">Shop</a></li>
                     <li class="nav-item"><a href="demo-fashion-store-collection.html" class="nav-link">Collection</a></li>
                     <li class="nav-item"><a href="demo-fashion-store-magazine.html" class="nav-link">Magazine</a></li>
@@ -471,5 +474,6 @@
 <script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/vendors.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/main.js')}}"></script>
+@yield('js')
 </body>
 </html>

@@ -47,9 +47,11 @@ class WelcomeController extends Controller
         $galleries=ItemGalleriesModel::where('item_id', $id)->get();
         $details=ItemDetailsModel::where('product_id', $id)->get();
         $item= ItemModel::with(['OtherInformation'])->where('status', 'active')->where('id', $id)->first();
+        $category=CategoryModel::find($item->category_id);
+        $other= ItemModel::with(['OtherInformation'])->where('status', 'active')->where('category_id', $category->id)->ordered()->limit(4)->get();
+$feedbacks= FeedbackModel::where('status', 'active')->where('item_id', $id)->get();
 
-
-        return view('page.product.index',compact('item','galleries','details'));
+        return view('page.product.index',compact('item','galleries','details','category','other','feedbacks'));
     }
 
     public function policy()
@@ -115,13 +117,17 @@ class WelcomeController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors()
+            ], 422);
         }
+
         FeedbackModel::create($request->all());
-        Session::flash('success', 'Feedback submitted successfully.');
-        return back();
+
+        return response()->json([
+            'message' => 'Feedback submitted successfully'
+        ], 201);
 
     }
 
@@ -146,5 +152,25 @@ class WelcomeController extends Controller
             'name' => $request->name,
         ]);
         return back();
+    }
+    public function order(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'id' => ['required'],
+        ], [
+            'name.required' => 'Անունը պարտադիր է։',
+            'phone.required' => 'Հեռախոսահամարը պարտադիր է։',
+            'id.required' => 'Անձնական ID-ն բացակայում է։',
+        ]);
+
+        CallupModel::create([
+            'item_id' => $request->id,
+            'phone' => $request->phone,
+            'name' => $request->name,
+        ]);
+
+        return response()->json(['message' => 'success']);
     }
 }

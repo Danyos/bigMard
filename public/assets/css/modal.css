@@ -1,0 +1,15 @@
+.modal-custom {
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content-custom {
+    background-color: #2A2D34;
+    color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.form-control-custom {
+    border-radius: 50rem;
+    background-color: #1c1e24;
+    color: white;
+    border: 1px solid #555;
+}

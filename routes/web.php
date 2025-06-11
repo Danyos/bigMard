@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,9 @@ Route::post('/page-password', function (Illuminate\Http\Request $request) {
 Route::middleware(['pagepassword'])->group(function () {
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('home.index');
 Route::get('/category/{slug}', [App\Http\Controllers\WelcomeController::class, 'storeShop'])->name('store.Shop');
+Route::post('/order/product', [WelcomeController::class, 'order'])->name('store.order');
+Route::post('/feedback', [App\Http\Controllers\WelcomeController::class, 'feedback']);
+
 Route::get('/catalog/{id}', [App\Http\Controllers\WelcomeController::class, 'storeProduct'])->name('store.product');
 Route::get('/privacy-policy', [App\Http\Controllers\WelcomeController::class, 'policy'])->name('privacy.policy');
 Route::get('/guarantee', [App\Http\Controllers\WelcomeController::class, 'guarantee'])->name('privacy.guarantee');
