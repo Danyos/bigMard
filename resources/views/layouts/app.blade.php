@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-    <title>Crafto - The Multipurpose HTML5 Template</title>
+    <title>BigMard</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="ThemeZaa">
@@ -68,177 +68,22 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav alt-font navbar-left justify-content-end">
                         <li class="nav-item">
-                            <a href="{{route('home.index')}}" class="nav-link">Home</a>
+                            <a href="{{route('home.index')}}" class="nav-link">Գլխավոր</a>
                         </li>
-                        <li class="nav-item dropdown submenu">
-                            <a href="demo-fashion-store-shop.html" class="nav-link">Shop</a>
-                            <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                            <div class="dropdown-menu submenu-content" aria-labelledby="navbarDropdownMenuLink1">
-                                <div class="d-lg-flex mega-menu m-auto flex-column">
-                                    <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-3 mb-50px md-mb-25px xs-mb-15px">
-                                        <div class="col">
-                                            <ul>
-                                                <li class="sub-title">Men</li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Trousers</a></li>
-                                                <li><a href="#">Swimwear</a></li>
-                                                <li><a href="#">Casual shirts</a></li>
-                                                <li><a href="#">Rain jackets</a></li>
-                                                <li><a href="#">Loungewear</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <ul>
-                                                <li class="sub-title">Women</li>
-                                                <li><a href="#">Dupattas</a></li>
-                                                <li><a href="#">Leggings</a></li>
-                                                <li><a href="#">Ethnic wear</a></li>
-                                                <li><a href="#">Kurtas & suits</a></li>
-                                                <li><a href="#">Western wear</a></li>
-                                                <li><a href="#">Dress materials</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <ul>
-                                                <li class="sub-title">Kids</li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Jumpsuits</a></li>
-                                                <li><a href="#">Track pants</a></li>
-                                                <li><a href="#">Ethnic wear</a></li>
-                                                <li><a href="#">Value packs</a></li>
-                                                <li><a href="#">Loungewear</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <ul>
-                                                <li class="sub-title">Divided</li>
-                                                <li><a href="#">Tops</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shorts</a></li>
-                                                <li><a href="#">Swimwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col">
-                                            <ul>
-                                                <li class="sub-title">Accessories</li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Scarves</a></li>
-                                                <li><a href="#">Watches</a></li>
-                                                <li><a href="#">Wristwear</a></li>
-                                                <li><a href="#">Backpacks</a></li>
-                                                <li><a href="#">Sunglasses</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row row-cols-1 row-cols-sm-2">
-                                        <div class="col">
-                                            <a href="demo-fashion-store-shop.html"><img src="https://placehold.co/580x175" alt=""></a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="demo-fashion-store-shop.html"><img src="https://placehold.co/580x175" alt=""></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown submenu">
-                            <a href="demo-fashion-store-collection.html" class="nav-link">Collection</a>
-                            <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                            <div class="dropdown-menu submenu-content" aria-labelledby="navbarDropdownMenuLink2">
-                                <div class="d-lg-flex mega-menu m-auto flex-column">
-                                    <div class="row row-cols-2 row-cols-lg-6 row-cols-md-3 row-cols-sm-2 md-mx-0 align-items-center justify-content-center">
-                                        <div class="col md-mb-25px">
-                                            <a href="demo-fashion-store-collection.html" class="justify-content-center mb-10px">
-                                                <img src="https://placehold.co/190x140" class="border-radius-4px w-100" alt="">
-                                            </a>
-                                            <a href="demo-fashion-store-collection.html" class="btn btn-hover-animation fw-500 text-uppercase-inherit justify-content-center pt-0 pb-0">
-                                                        <span>
-                                                            <span class="btn-text text-dark-gray fs-17">Polo t-shirts</span>
-                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right icon-very-small w-auto"></i></span>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                        <div class="col md-mb-25px">
-                                            <a href="demo-fashion-store-collection.html" class="justify-content-center mb-10px">
-                                                <img src="https://placehold.co/190x140" class="border-radius-4px w-100" alt="">
-                                            </a>
-                                            <a href="demo-fashion-store-collection.html" class="btn btn-hover-animation fw-500 text-uppercase-inherit justify-content-center pt-0 pb-0">
-                                                        <span>
-                                                            <span class="btn-text text-dark-gray fs-17">Sunglasses</span>
-                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right icon-very-small w-auto"></i></span>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                        <div class="col md-mb-25px">
-                                            <a href="demo-fashion-store-collection.html" class="justify-content-center mb-10px">
-                                                <img src="https://placehold.co/190x140" class="border-radius-4px w-100" alt="">
-                                            </a>
-                                            <a href="demo-fashion-store-collection.html" class="btn btn-hover-animation fw-500 text-uppercase-inherit justify-content-center pt-0 pb-0">
-                                                        <span>
-                                                            <span class="btn-text text-dark-gray fs-17">Skinny blazer</span>
-                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right icon-very-small w-auto"></i></span>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                        <div class="col sm-mb-25px">
-                                            <a href="demo-fashion-store-collection.html" class="justify-content-center mb-10px">
-                                                <img src="https://placehold.co/190x140" class="border-radius-4px w-100" alt="">
-                                            </a>
-                                            <a href="demo-fashion-store-collection.html" class="btn btn-hover-animation fw-500 text-uppercase-inherit justify-content-center pt-0 pb-0">
-                                                        <span>
-                                                            <span class="btn-text text-dark-gray fs-17">Casual shoes</span>
-                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right icon-very-small w-auto"></i></span>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="demo-fashion-store-collection.html" class="justify-content-center mb-10px">
-                                                <img src="https://placehold.co/190x140" class="border-radius-4px w-100" alt="">
-                                            </a>
-                                            <a href="demo-fashion-store-collection.html" class="btn btn-hover-animation fw-500 text-uppercase-inherit justify-content-center pt-0 pb-0">
-                                                        <span>
-                                                            <span class="btn-text text-dark-gray fs-17">Winter jackets</span>
-                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right icon-very-small w-auto"></i></span>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="demo-fashion-store-collection.html" class="justify-content-center mb-10px">
-                                                <img src="https://placehold.co/190x140" class="border-radius-4px w-100" alt="">
-                                            </a>
-                                            <a href="demo-fashion-store-collection.html" class="btn btn-hover-animation fw-500 text-uppercase-inherit justify-content-center pt-0 pb-0">
-                                                        <span>
-                                                            <span class="btn-text text-dark-gray fs-17">Men's shorts</span>
-                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right icon-very-small w-auto"></i></span>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <li class="nav-item">
+                            <a href="{{route('home.best')}}" class="nav-link">Լավագույն</a>
+
                         </li>
                     </ul>
                     <ul class="navbar-nav alt-font navbar-right justify-content-start">
                         <li class="nav-item">
-                            <a href="demo-fashion-store-magazine.html" class="nav-link">Magazine</a>
-                        </li>
-                        <li class="nav-item dropdown simple-dropdown">
-                            <a href="javascript:void(0);" class="nav-link">Pages</a>
-                            <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                <li><a href="demo-fashion-store-about.html">About</a></li>
-                                <li><a href="demo-fashion-store-faq.html">Faq</a></li>
-                                <li><a href="demo-fashion-store-wishlist.html">Wishlist</a></li>
-                                <li><a href="demo-fashion-store-account.html">Account</a></li>
-                                <li><a href="demo-fashion-store-cart.html">Cart</a></li>
-                                <li><a href="demo-fashion-store-checkout.html">Checkout</a></li>
-                            </ul>
+                            <a href="demo-fashion-store-magazine.html" class="nav-link">Թեժ առաջարկ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="demo-fashion-store-contact.html" class="nav-link">Contact</a>
+                            <a href="{{route('home.news')}}" class="nav-link">Նոր</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -259,41 +104,8 @@
                             </form>
                         </div>
                     </div>
-                    <div class="widget-text icon alt-font">
-                        <a href="demo-fashion-store-account.html"><i class="feather icon-feather-user d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">Account</span></a>
-                    </div>
-                    <div class="header-cart-icon icon">
-                        <div class="header-cart dropdown">
-                            <a href="javascript:void(0);"><i class="feather icon-feather-shopping-bag"></i><span class="cart-count alt-font text-white bg-dark-gray">2</span></a>
-                            <ul class="cart-item-list">
-                                <li class="cart-item align-items-center">
-                                    <a href="javascript:void(0);" class="alt-font close">×</a>
-                                    <div class="product-image">
-                                        <a href="demo-fashion-store-single-product.html"><img src="https://placehold.co/600x765" class="cart-thumb" alt=""></a>
-                                    </div>
-                                    <div class="product-detail fw-600">
-                                        <a href="demo-fashion-store-single-product.html">Ribbed tank</a>
-                                        <span class="item-ammount fw-400">1 x $23.00</span>
-                                    </div>
-                                </li>
-                                <li class="cart-item align-items-center">
-                                    <a href="javascript:void(0);" class="alt-font close">×</a>
-                                    <div class="product-image">
-                                        <a href="demo-fashion-store-single-product.html"><img src="https://placehold.co/600x765" class="cart-thumb" alt=""></a>
-                                    </div>
-                                    <div class="product-detail fw-600">
-                                        <a href="demo-fashion-store-single-product.html">Pleated dress</a>
-                                        <span class="item-ammount fw-400">2 x $15.00</span>
-                                    </div>
-                                </li>
-                                <li class="cart-total">
-                                    <div class="fs-18 alt-font mb-15px"><span class="w-50 fw-500 text-start">Subtotal:</span><span class="w-50 text-end fw-700">$199.99</span></div>
-                                    <a href="demo-fashion-store-cart.html" class="btn btn-large btn-transparent-light-gray border-color-extra-medium-gray">View cart</a>
-                                    <a href="demo-fashion-store-checkout.html" class="btn btn-large btn-dark-gray btn-box-shadow">Checkout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -303,104 +115,7 @@
 @yield('content')
 <!-- start footer -->
 <footer class="footer-dark bg-dark-gray p-0">
-    <div class="container">
-        <div class="row align-items-center pt-35px pb-35px">
-            <!-- start footer column -->
-            <div class="col-12 col-md-auto sm-mb-15px text-center text-md-start">
-                <a href="demo-fashion-store.html" class="footer-logo"><img src="images/demo-fashion-store-logo-white.png" data-at2x="images/demo-fashion-store-logo-white@2x.png" alt="" class="default-logo"></a>
-            </div>
-            <!-- end footer column -->
-            <!-- start footer column -->
-            <div class="col">
-                <ul class="footer-navbar text-center text-md-end">
-                    <li class="nav-item"><a href="{{route('home.index')}}l" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="demo-fashion-store-shop.html" class="nav-link">Shop</a></li>
-                    <li class="nav-item"><a href="demo-fashion-store-collection.html" class="nav-link">Collection</a></li>
-                    <li class="nav-item"><a href="demo-fashion-store-magazine.html" class="nav-link">Magazine</a></li>
-                    <li class="nav-item"><a href="demo-fashion-store-about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="demo-fashion-store-contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-            <!-- end footer column -->
-        </div>
-        <div class="row justify-content-center fs-15 lh-28 pb-50px xs-pb-35px">
-            <div class="col-12 mb-50px sm-mb-35px">
-                <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
-            </div>
-            <!-- start footer column -->
-            <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                <span class="fw-500 d-block text-white mb-5px fs-17">Categories</span>
-                <ul>
-                    <li><a href="demo-fashion-store-shop.html">Men</a></li>
-                    <li><a href="demo-fashion-store-shop.html">Women</a></li>
-                    <li><a href="demo-fashion-store-shop.html">Accessories</a></li>
-                    <li><a href="demo-fashion-store-shop.html">Shoes</a></li>
-                    <li><a href="demo-fashion-store-shop.html">Dresses</a></li>
-                </ul>
-            </div>
-            <!-- end footer column -->
-            <!-- start footer column -->
-            <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                <span class="fw-500 d-block text-white mb-5px fs-17">Information</span>
-                <ul>
-                    <li><a href="demo-fashion-store-about.html">About us</a></li>
-                    <li><a href="demo-fashion-store-contact.html">Contact us</a></li>
-                    <li><a href="#">Terms & conditions</a></li>
-                    <li><a href="#">Shipping & delivery</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                </ul>
-            </div>
-            <!-- end footer column -->
-            <!-- start footer column -->
-            <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                <span class="fw-500 d-block text-white mb-5px fs-17">Quick links</span>
-                <ul>
-                    <li><a href="demo-fashion-store-account.html">My account</a></li>
-                    <li><a href="#">Orders tracking</a></li>
-                    <li><a href="#">Our store</a></li>
-                    <li><a href="#">Size guide</a></li>
-                    <li><a href="demo-fashion-store-faq.html">FAQs</a></li>
-                </ul>
-            </div>
-            <!-- end footer column -->
-            <!-- start footer column -->
-            <div class="col-6 col-lg-3 col-md-4 col-sm-5 md-mb-50px xs-mb-30px order-sm-2 order-lg-2 offset-md-2 offset-lg-0">
-                <span class="fw-500 d-block text-white mb-10px fs-17">Quick contact</span>
-                <div><i class="feather icon-feather-phone-call fs-16 text-white me-10px xs-me-5px"></i><a href="tel:1234567890">123 456 7890</a></div>
-                <div class="mb-15px"><i class="feather icon-feather-mail fs-16 text-white me-10px xs-me-5px"></i><a href="mailto:info@domain.com" class="text-decoration-line-bottom">info@domain.com</a></div>
-                <span class="fw-500 d-block text-white mb-5px fs-17">Connect with us</span>
-                <div class="elements-social social-icon-style-02">
-                    <ul class="light">
-                        <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
-                        <li><a class="twitter" href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- end footer column -->
-            <!-- start footer column -->
-            <div class="col-lg-3 col-md-6 col-sm-7 ps-20px sm-ps-15px md-mb-50px xs-mb-0 order-sm-1 order-lg-5">
-                <span class="fw-500 d-block text-white mb-5px fs-17">Become a member</span>
-                <div class="mb-15px">Join now and get 20% extra discount!</div>
-                <div class="d-inline-block w-100 newsletter-style-04 position-relative mb-15px">
-                    <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative w-100">
-                        <input class="input-small bg-nero-grey border-radius-4px border-color-transparent w-100 form-control pe-50px ps-20px lg-ps-15px required" type="email" name="email" placeholder="Enter your email" />
-                        <input type="hidden" name="redirect" value="">
-                        <button class="btn pe-20px submit" aria-label="submit"><i class="icon bi bi-envelope icon-small text-white"></i></button>
-                        <div class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none"></div>
-                    </form>
-                </div>
-                <div class="footer-card">
-                    <a href="#" class="d-inline-block me-5px align-middle"><img src="https://placehold.co/55x20" alt=""></a>
-                    <a href="#" class="d-inline-block me-5px align-middle"><img src="https://placehold.co/55x20" alt=""></a>
-                    <a href="#" class="d-inline-block me-5px align-middle"><img src="https://placehold.co/55x20" alt=""></a>
-                    <a href="#" class="d-inline-block me-5px align-middle"><img src="https://placehold.co/55x20" alt=""></a>
-                </div>
-            </div>
-            <!-- end footer column -->
-        </div>
-    </div>
+
     <div class="pt-30px pb-30px bg-nero-grey">
         <div class="container">
             <div class="row align-items-center fs-15">
@@ -408,7 +123,7 @@
                     <p>This site is protected by reCAPTCHA and the Google <a href="#" class="text-white text-decoration-line-bottom">privacy policy</a> and <a href="#" class="text-white text-decoration-line-bottom">terms of service.</a></p>
                 </div>
                 <div class="col-12 col-lg-5 text-center text-lg-end lh-22">
-                    <span>&copy; 2024 Crafto is Proudly Powered by <a href="https://www.themezaa.com/" target="_blank" class="text-decoration-line-bottom text-white">ThemeZaa</a></span>
+                    <span>&copy; 2024 Bigmard is Proudly Powered by <a href="https://bigmard.am/" target="_blank" class="text-decoration-line-bottom text-white">ThemeZaa</a></span>
                 </div>
             </div>
         </div>
@@ -439,18 +154,6 @@
             <li class="me-30px"><a class="facebook" href="https://www.facebook.com/" target="_blank">
                     <i class="fa-brands fa-facebook-f me-10px"></i>
                     <span class="alt-font">Facebook</span>
-                </a>
-            </li>
-            <li class="me-30px">
-                <a class="dribbble" href="http://www.dribbble.com" target="_blank">
-                    <i class="fa-brands fa-dribbble me-10px"></i>
-                    <span class="alt-font">Dribbble</span>
-                </a>
-            </li>
-            <li class="me-30px">
-                <a class="twitter" href="http://www.twitter.com" target="_blank">
-                    <i class="fa-brands fa-twitter me-10px"></i>
-                    <span class="alt-font">Twitter</span>
                 </a>
             </li>
             <li>

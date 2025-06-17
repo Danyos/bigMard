@@ -30,6 +30,20 @@ class WelcomeController extends Controller
             'sliders' => SliderImage::orderBy('id', 'desc')->get()
         ]);
     }
+    public function best()
+    {
+        return view('page.store', [
+            'items' => ItemModel::with(['OtherInformation'])->where('status', 'active')->whereNot('best', 'active')->whereNot('new', 'inactive')->ordered()->paginate(15),
+            'title'=>'Լավագույն վաճառք'
+        ]);
+    }
+   public function news()
+    {
+        return view('page.store', [
+            'items' => ItemModel::with(['OtherInformation'])->where('status', 'active')->whereNot('best', 'inactive')->whereNot('new', 'active')->ordered()->paginate(15),
+            'title'=>'Նոր Ապրանքներ'
+        ]);
+    }
 
     public function storeShop($slug)
     {

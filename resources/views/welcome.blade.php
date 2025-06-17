@@ -134,7 +134,7 @@
         <div class="container">
             <div class="row mb-5 xs-mb-8">
                 <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Best seller <span class="text-highlight fw-600">products<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
+                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Լավագույն <span class="text-highlight fw-600">վաճառք<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
                 </div>
             </div>
         </div>
@@ -153,21 +153,7 @@
                                         <span class="lable new">New</span>
                                         <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                     </a>
-                                    <div class="shop-buttons-wrap">
-                                        <a href="{{route('store.product',$best->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add to cart</span>
-                                        </a>
-                                    </div>
-                                    <div class="shop-hover d-flex justify-content-center">
-                                        <ul>
-                                            <li>
-                                                <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="feather icon-feather-heart fs-16"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i class="feather icon-feather-eye fs-16"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
+
                                 </div>
                                 <div class="shop-footer text-center">
                                     <a href="{{route('store.product',$best->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$best->name}}</a>
@@ -188,7 +174,7 @@
         <div class="container">
             <div class="row mb-5 xs-mb-8">
                 <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Featured <span class="text-highlight fw-600">products<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
+                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Ամենաշատ գնված <span class="text-highlight fw-600">Ապրանքներ<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
                 </div>
             </div>
         </div>
@@ -206,21 +192,8 @@
                                             <img src="{{asset($allItem->OtherInformation->coverImages)}}" width="100%">
                                             <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                         </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="{{route('store.product',$allItem->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
+
+
                                     </div>
                                     <div class="shop-footer text-center">
                                         <a href="{{route('store.product',$allItem->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$allItem->id }}  {{$allItem->name}}</a>
@@ -254,15 +227,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 ps-5 pe-5 xl-pe-0 lg-ps-0 text-center text-lg-start md-mb-40px">
                     <div class="mb-10px"><span class="text-dark-gray fw-500 text-highlight">Lookbook 2023<span class="bg-base-color h-8px bottom-0px"></span></span></div>
-                    <h2 class="alt-font lh-50 text-dark-gray ls-minus-1px mb-15px">New arrival <span class="fw-600">collection</span></h2>
+                    <h2 class="alt-font lh-50 text-dark-gray ls-minus-1px mb-15px">Նոր  <span class="fw-600  text-nowrap">ընտրանի</span></h2>
                     <p class="xs-pe-15px xs-ps-15px">Flash summer sale 70% off on selected collection for him.</p>
                     <a href="demo-fashion-store-shop.html" class="btn btn-dark-gray btn-box-shadow btn-medium">View collection</a>
-                    <!--<div class="d-flex mt-30px justify-content-center justify-content-lg-start">
-                         start slider navigation
-                        <div class="slider-one-slide-prev-1 icon-small text-dark-gray swiper-button-prev slider-navigation-style-04 bg-white box-shadow-large"><i class="fa-solid fa-arrow-left"></i></div>
-                        <div class="slider-one-slide-next-1 icon-small text-dark-gray swiper-button-next slider-navigation-style-04 bg-white box-shadow-large"><i class="fa-solid fa-arrow-right"></i></div>
-                         end slider navigation
-                    </div>-->
+
                 </div>
                 <div class="col-12 col-lg-9 position-relative">
                     <div class="outside-box-right-10 lg-outside-box-right-20 md-outside-box-right-25 xs-outside-box-right-0">
@@ -276,14 +244,14 @@
                                         <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
                                         <div class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
                                             <div class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Ethnic wear</span>
+                                                <span class="text-white fw-500 fs-22">{{$newItem->name}}</span>
                                                 <span class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Outfits matching</span>
-                                                <a href="demo-fashion-store-shop.html" class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore collection</a>
+                                                <a href="{{route('store.product',$newItem->id)}}" class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore collection</a>
                                                 <span class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
                                             </div>
                                             <div class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9"></div>
                                             <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html" class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
+                                            <a href="{{route('store.product',$newItem->id)}}" class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -387,78 +355,7 @@
         </div>
     </section>
     <!-- end section -->
-    <!-- start section -->
-    <section class="pb-3 ps-7 pe-7 lg-ps-3 lg-pe-3 xs-px-0">
-        <div class="container">
-            <div class="row mb-4 xs-mb-7">
-                <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Fashion <span class="text-highlight fw-600">magazine<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <ul class="blog-classic blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large" data-anime='{ "el": "childs", "translateY": [15, 0], "translateX": [-15, 0], "opacity": [0,1], "duration": 500, "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <li class="grid-sizer"></li>
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="blog-image position-relative overflow-hidden">
-                                    <a href="demo-fashion-store-blog-single-creative.html"><img src="https://placehold.co/600x455" alt="" /></a>
-                                </div>
-                                <div class="card-body px-0 pt-30px pb-30px sm-pb-15px">
-                                    <span class="mb-5px d-block">By <a href="#" class="text-dark-gray fw-500 categories-text">Den viliamson</a><a href="#" class="blog-date">26 December 2023</a></span>
-                                    <a href="demo-fashion-store-blog-single-creative.html" class="alt-font card-title fs-20 lh-30 fw-500 text-dark-gray d-inline-block w-75 xl-w-85 lg-w-100">Elegance is not standing out, but being remembered.</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="blog-image position-relative overflow-hidden">
-                                    <a href="demo-fashion-store-blog-single-creative.html"><img src="https://placehold.co/600x455" alt="" /></a>
-                                </div>
-                                <div class="card-body px-0 pt-30px pb-30px sm-pb-15px">
-                                    <span class="mb-5px d-block">By <a href="#" class="text-dark-gray fw-500 categories-text">Hugh macleod</a><a href="#" class="blog-date">20 December 2023</a></span>
-                                    <a href="demo-fashion-store-blog-single-creative.html" class="alt-font card-title fs-20 lh-30 fw-500 text-dark-gray d-inline-block w-75 xl-w-85 lg-w-100">Fashion is the armor to survive the reality of everyday life.</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="blog-image position-relative overflow-hidden">
-                                    <a href="demo-fashion-store-blog-single-creative.html"><img src="https://placehold.co/600x455" alt="" /></a>
-                                </div>
-                                <div class="card-body px-0 pt-30px pb-30px sm-pb-15px">
-                                    <span class="mb-5px d-block">By <a href="#" class="text-dark-gray fw-500 categories-text">Walton smith</a><a href="#" class="blog-date">10 December 2023</a></span>
-                                    <a href="demo-fashion-store-blog-single-creative.html" class="alt-font card-title fs-20 lh-30 fw-500 text-dark-gray d-inline-block w-75 xl-w-85 lg-w-100">In order to be irreplaceable one must always be different.</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="blog-image position-relative overflow-hidden">
-                                    <a href="demo-fashion-store-blog-single-creative.html"><img src="https://placehold.co/600x455" alt="" /></a>
-                                </div>
-                                <div class="card-body px-0 pt-30px pb-30px sm-pb-15px">
-                                    <span class="mb-5px d-block">By <a href="#" class="text-dark-gray fw-500 categories-text">Walton smith</a><a href="#" class="blog-date">10 December 2023</a></span>
-                                    <a href="demo-fashion-store-blog-single-creative.html" class="alt-font card-title fs-20 lh-30 fw-500 text-dark-gray d-inline-block w-75 xl-w-85 lg-w-100">Gucci has represented design and contemporary lifestyle.</a>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- end blog item -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end section -->
+
 
 @endsection
 @section('js')
