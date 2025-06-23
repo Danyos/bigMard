@@ -1,5 +1,42 @@
 @extends('layouts.app')
+@push('css')
+    <style>
+        .auction-timer-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 12px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
 
+        .auction-timer-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .timer-box {
+            flex: 0 0 auto;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .animate-blink {
+            animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            to { visibility: hidden; }
+        }
+    </style>
+@endpush
 @section('content')
     <!-- start section -->
     <section class="top-space-margin half-section bg-gradient-very-light-gray">
@@ -34,12 +71,14 @@
                                 <div class="shop-image mb-20px">
                                     <a href="{{route('store.product',$product->id)}}">
                                         <img src="{{asset($product->OtherInformation->coverImages)}}" alt="">
+                                      @if($product->new==='active')
                                         <span class="lable new">New</span>
-                                        <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
+                                        @endif
+                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                     </a>
                                     <div class="shop-buttons-wrap">
                                         <a href="{{route('store.product',$product->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add to cart</span>
+                                            <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Պատվիրել Հիմա</span>
                                         </a>
                                     </div>
                                     <div class="shop-hover d-flex justify-content-center">
@@ -52,8 +91,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="shop-footer text-center">
+                                    <div class="auction-timer-wrapper" id="timer-{{ $product->id }}" data-end-time="{{ \Carbon\Carbon::parse($product->auction_end_time)->format('Y-m-d H:i:s') }}">
+                                        <div class="timer-box bg-danger text-white">01 օ․</div>
+                                        <div class="timer-box bg-warning text-dark">06 ժ․</div>
+                                        <div class="timer-box bg-info text-dark">50 ր․</div>
+                                        <div class="timer-box bg-success text-white">42 վ․</div>
+                                    </div>                                <div class="shop-footer text-center">
                                     <a href="{{route('store.product',$product->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$product->name}}</a>
                                     <div class="price lh-22 fs-16"><del>{{$product->price}} դրամ</del>{{$product->price-($product->price*$product->discount)/100}} դրամ</div>
                                 </div>
@@ -75,3 +118,38 @@
     <!-- end section -->
 
 @endsection
+@push('js')
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.auction-timer-wrapper').forEach(timer => {
+                const endTimeStr = timer.getAttribute('data-end-time');
+                const endTime = new Date(endTimeStr).getTime();
+                const boxes = timer.querySelectorAll('.timer-box');
+
+                function update() {
+                    const now = new Date().getTime();
+                    const distance = endTime - now;
+
+                    if (distance < 0) {
+                        timer.innerHTML = "<strong class='text-danger'>Ժամկետը ավարտվել է</strong>";
+                        return;
+                    }
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    boxes[0].textContent = String(days).padStart(2, '0') + " օ․";
+                    boxes[1].textContent = String(hours).padStart(2, '0') + " ժ․";
+                    boxes[2].textContent = String(minutes).padStart(2, '0') + " ր․";
+                    boxes[3].textContent = String(seconds).padStart(2, '0') + " վ․";
+                }
+
+                update();
+                setInterval(update, 1000);
+            });
+        });
+    </script>
+@endpush
+

@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/icon.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/modal.css')}}"/>
+
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/demos/fashion-store/fashion-store.css')}}" />
+    @stack('css')
 </head>
 <body data-mobile-nav-style="classic">
 <!-- start header -->
@@ -78,7 +80,7 @@
                     </ul>
                     <ul class="navbar-nav alt-font navbar-right justify-content-start">
                         <li class="nav-item">
-                            <a href="demo-fashion-store-magazine.html" class="nav-link">Թեժ առաջարկ</a>
+                            <a href="{{route('home.hot')}}" class="nav-link">Թեժ առաջարկ</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('home.news')}}" class="nav-link">Նոր</a>
@@ -177,6 +179,6 @@
 <script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/vendors.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/main.js')}}"></script>
-@yield('js')
+@stack('js')
 </body>
 </html>

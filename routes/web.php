@@ -44,6 +44,7 @@ Route::middleware(['pagepassword'])->group(function () {
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('home.index');
 Route::get('/best', [App\Http\Controllers\WelcomeController::class, 'best'])->name('home.best');
 Route::get('/news', [App\Http\Controllers\WelcomeController::class, 'news'])->name('home.news');
+Route::get('/hot', [App\Http\Controllers\WelcomeController::class, 'hot'])->name('home.hot');
 Route::get('/category/{slug}', [App\Http\Controllers\WelcomeController::class, 'storeShop'])->name('store.Shop');
 Route::post('/order/product', [WelcomeController::class, 'order'])->name('store.order');
 Route::post('/feedback', [App\Http\Controllers\WelcomeController::class, 'feedback']);

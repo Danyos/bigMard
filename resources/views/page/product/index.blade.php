@@ -1,5 +1,42 @@
 @extends('layouts.app')
+@push('css')
+    <style>
+        .auction-timer-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
 
+            align-items: center;
+            margin-top: 12px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .auction-timer-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .timer-box {
+            flex: 0 0 auto;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
+            min-width: 60px;
+        }
+
+        .animate-blink {
+            animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            to { visibility: hidden; }
+        }
+    </style>
+@endpush
 @section('content')
 
     <!-- start section -->
@@ -79,7 +116,17 @@
                         </div>
 
 
+
                         <p>{{$item->OtherInformation->imgText}}</p>
+                        @if($item->auction_end_time)
+                            <div class="auction-timer-wrapper my-4"
+                                 data-end-time="{{ \Carbon\Carbon::parse($item->auction_end_time)->format('Y-m-d H:i:s') }}">
+                                <div class="timer-box bg-danger text-white">-- օ․</div>
+                                <div class="timer-box bg-warning text-dark">-- ժ․</div>
+                                <div class="timer-box bg-info text-dark">-- ր․</div>
+                                <div class="timer-box bg-success text-white animate-blink">-- վ․</div>
+                            </div>
+                        @endif
                         <div class="d-flex align-items-center flex-column flex-sm-row mb-20px position-relative">
 
                             <button data-bs-toggle="modal" data-bs-target="#customModal"
@@ -386,7 +433,7 @@
     </div>
 
 @endsection
-@section('js')
+@push('js')
     <script>
         function closeModal() {
             const modalEl = document.getElementById('customModal');
@@ -557,4 +604,38 @@
         });
     </script>
 
-@endsection
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.auction-timer-wrapper').forEach(timer => {
+                const endTimeStr = timer.getAttribute('data-end-time');
+                const endTime = new Date(endTimeStr).getTime();
+                const boxes = timer.querySelectorAll('.timer-box');
+
+                function update() {
+                    const now = new Date().getTime();
+                    const distance = endTime - now;
+
+                    if (distance < 0) {
+                        timer.innerHTML = "<strong class='text-danger'>Ժամկետը ավարտվել է</strong>";
+                        return;
+                    }
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    boxes[0].textContent = String(days).padStart(2, '0') + " օ․";
+                    boxes[1].textContent = String(hours).padStart(2, '0') + " ժ․";
+                    boxes[2].textContent = String(minutes).padStart(2, '0') + " ր․";
+                    boxes[3].textContent = String(seconds).padStart(2, '0') + " վ․";
+                }
+
+                update();
+                setInterval(update, 1000);
+            });
+        });
+    </script>
+@endpush

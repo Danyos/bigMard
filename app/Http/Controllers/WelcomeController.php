@@ -10,6 +10,7 @@ use App\Models\Product\ItemGalleriesModel;
 use App\Models\Product\ItemModel;
 use App\Models\Product\ItemOtherInformate;
 use App\Models\SliderImage;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -37,6 +38,17 @@ class WelcomeController extends Controller
             'title'=>'Լավագույն վաճառք'
         ]);
     }
+    public function hot()
+    {
+        return view('page.store', [
+            'items' => ItemModel::with(['OtherInformation'])
+                ->where('status', 'active')
+                ->where('auction_end_time', '>', Carbon::now())
+                ->ordered()
+                ->paginate(15),
+            'title'=>'Թեժ առաջարկներ'
+        ]);
+    }
    public function news()
     {
         return view('page.store', [
@@ -50,10 +62,16 @@ class WelcomeController extends Controller
         $category = CategoryModel::where('slug', $slug)->firstOrFail();
         $products = null;
         if ($category) {
-            $products = ItemModel::with(['OtherInformation'])->where('status', 'active')->ordered()->paginate(15);
-
+            return view('page.store', [
+                'items' => ItemModel::with(['OtherInformation'])->where('status', 'active')->ordered()->paginate(15),
+                'title'=>$category->name.' Ապրանքներ'
+            ]);
         }
-        return view('page.storeShop', compact('category', 'products'));
+        return view('page.store', [
+            'items' => null,
+            'title'=>'Ապրանքներ '.$slug.' բացակյում է'
+        ]);
+
     }
 
     public function storeProduct($id)

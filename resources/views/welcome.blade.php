@@ -150,7 +150,9 @@
                                 <div class="shop-image mb-20px">
                                     <a href="{{route('store.product',$best->id)}}">
                                         <img src="{{asset($best->OtherInformation->coverImages)}}" alt="">
+                                        @if($best->new==='active')
                                         <span class="lable new">New</span>
+                                        @endif
                                         <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                     </a>
 
