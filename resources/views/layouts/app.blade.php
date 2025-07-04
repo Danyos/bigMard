@@ -114,11 +114,9 @@
     <div class="pt-30px pb-30px bg-nero-grey">
         <div class="container">
             <div class="row align-items-center fs-15">
-                <div class="col-12 col-lg-7 last-paragraph-no-margin md-mb-15px text-center text-lg-start lh-22">
-                    <p>This site is protected by reCAPTCHA and the Google <a href="#" class="text-white text-decoration-line-bottom">privacy policy</a> and <a href="#" class="text-white text-decoration-line-bottom">terms of service.</a></p>
-                </div>
+
                 <div class="col-12 col-lg-5 text-center text-lg-end lh-22">
-                    <span>&copy; 2024 Bigmard is Proudly Powered by <a href="https://bigmard.am/" target="_blank" class="text-decoration-line-bottom text-white">ThemeZaa</a></span>
+                    <span>&copy; 2025 Bigmard <a href="https://bigmard.am/" target="_blank" class="text-decoration-line-bottom text-white">DVcoding</a></span>
                 </div>
             </div>
         </div>
@@ -127,17 +125,19 @@
 <!-- end footer -->
 <!-- start cookie message -->
 <div id="cookies-model" class="cookie-message bg-dark-gray border-radius-8px">
-    <div class="cookie-description fs-14 text-white mb-20px lh-22">We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Allow cookies" you consent to our use of cookies. </div>
+    <div class="cookie-description fs-14 text-white mb-20px lh-22">
+        Մենք օգտագործում ենք cookie-ներ՝ Ձեր կայքում փորձը բարելավելու, անհատական առաջարկներ ու բովանդակություն ցույց տալու, և մեր տրաֆիկը վերլուծելու համար։ Սեղմելով «Թույլատրել cookie-ները»՝ համաձայնում եք դրանց օգտագործմանը։
+    </div>
     <div class="cookie-btn">
         <a href="#" class="btn btn-transparent-white border-1 border-color-transparent-white-light btn-very-small btn-switch-text btn-rounded w-100 mb-15px" aria-label="btn">
-                    <span>
-                        <span class="btn-double-text" data-text="Cookie policy">Cookie policy</span>
-                    </span>
+            <span>
+                <span class="btn-double-text" data-text="Cookie policy">Կանոններ cookie-ների մասին</span>
+            </span>
         </a>
         <a href="#" class="btn btn-white btn-very-small btn-switch-text btn-box-shadow accept_cookies_btn btn-rounded w-100" data-accept-btn aria-label="text">
-                    <span>
-                        <span class="btn-double-text" data-text="Allow cookies">Allow cookies</span>
-                    </span>
+            <span>
+                <span class="btn-double-text" data-text="Allow cookies">Թույլատրել cookie-ները</span>
+            </span>
         </a>
     </div>
 </div>
@@ -173,5 +173,23 @@
 <script type="text/javascript" src="{{asset('assets/js/vendors.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/main.js')}}"></script>
 @stack('js')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cookiesModel = document.getElementById('cookies-model');
+        const acceptBtn = document.querySelector('.accept_cookies_btn');
+
+        // Ստուգենք՝ արդյոք արդեն համաձայնվել են
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            cookiesModel.style.display = 'none';
+        }
+
+        acceptBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            cookiesModel.style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        });
+    });
+</script>
+
 </body>
 </html>
