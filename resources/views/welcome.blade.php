@@ -53,8 +53,8 @@
                             <i class="line-icon-Box-Close icon-large text-dark-gray"></i>
                         </div>
                         <div class="feature-box-content">
-                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Free shipping</span>
-                            <p class="fs-16 lh-24">Free shipping on first order</p>
+                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Առաքում</span>
+                            <p class="fs-16 lh-24">Անվճար առաքում</p>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@
                             <i class="line-icon-Reload-3 icon-large text-dark-gray"></i>
                         </div>
                         <div class="feature-box-content">
-                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">15 days returns</span>
-                            <p class="fs-16 lh-24">Moneyback guarantee</p>
+                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Երաշխիք</span>
+                            <p class="fs-16 lh-24">Երաշխիք 15 օր և գումարի վերադարձ</p>
                         </div>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                             <i class="line-icon-Credit-Card2 icon-large text-dark-gray"></i>
                         </div>
                         <div class="feature-box-content">
-                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Secure payment</span>
-                            <p class="fs-16 lh-24">100% protected payment</p>
+                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Որակ</span>
+                            <p class="fs-16 lh-24">Երաշխավորված որակ</p>
                         </div>
                     </div>
                 </div>
@@ -92,8 +92,8 @@
                             <i class="line-icon-Phone-2 icon-large text-dark-gray"></i>
                         </div>
                         <div class="feature-box-content">
-                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Online support</span>
-                            <p class="fs-16 lh-24">24/7 days a week support</p>
+                            <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Աջակցություն</span>
+                            <p class="fs-16 lh-24">Առցանց կապ 24/7</p>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
         <div class="container">
             <div class="row mb-5 xs-mb-8">
                 <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Ամենաշատ գնված <span class="text-highlight fw-600">Ապրանքներ<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
+                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Գնված ապրանքների <span class="text-highlight fw-600">TOP<span class="bg-base-color h-5px bottom-2px"></span></span></h2>
                 </div>
             </div>
         </div>
@@ -216,8 +216,7 @@
     <section class="p-15px bg-dark-gray text-white">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <span class="fs-15 text-uppercase fw-500">Take an extra 25% discount our favorite dress style. Use code:<span class="fs-14 fw-700 lh-28 alt-font text-dark-gray text-uppercase bg-base-color d-inline-block border-radius-30px ps-15px pe-15px ms-5px align-middle">fw205</span></span>
+                <div class="col-12 text-center h-40px">
                 </div>
             </div>
         </div>
@@ -228,10 +227,8 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-3 ps-5 pe-5 xl-pe-0 lg-ps-0 text-center text-lg-start md-mb-40px">
-                    <div class="mb-10px"><span class="text-dark-gray fw-500 text-highlight">Lookbook 2023<span class="bg-base-color h-8px bottom-0px"></span></span></div>
                     <h2 class="alt-font lh-50 text-dark-gray ls-minus-1px mb-15px">Նոր  <span class="fw-600  text-nowrap">ընտրանի</span></h2>
-                    <p class="xs-pe-15px xs-ps-15px">Flash summer sale 70% off on selected collection for him.</p>
-                    <a href="demo-fashion-store-shop.html" class="btn btn-dark-gray btn-box-shadow btn-medium">View collection</a>
+                    <a href="{{route('home.news')}}" class="btn btn-dark-gray btn-box-shadow btn-medium">Իմանալ ավելին</a>
 
                 </div>
                 <div class="col-12 col-lg-9 position-relative">

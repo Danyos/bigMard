@@ -31,15 +31,8 @@
 <!-- start header -->
 <header class="header-with-topbar">
     <!-- start header top bar -->
-    <div class="header-top-bar top-bar-light bg-base-color disable-fixed md-border-bottom border-color-transparent-dark-very-light">
-        <div class="container-fluid">
-            <div class="row h-40px align-items-center m-0">
-                <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
-                    <div class="text-dark-gray">Enjoy FREE standard delivery on orders over $100.</div>
-                    <a href="#" class="text-dark-gray fw-600 ms-5px text-dark-gray-hover"><span class="text-decoration-line-bottom">Shop now</span></a>
-                </div>
-            </div>
-        </div>
+    <div class="header-top-bar top-bar-light  h-40px bg-base-color disable-fixed md-border-bottom border-color-transparent-dark-very-light">
+
     </div>
     <!-- end header top bar -->
     <!-- start navigation -->
@@ -50,9 +43,9 @@
                     <div class="widget-text icon alt-font">
                         <a href="{{route('home.index')}}"><i class="feather icon-feather-map-pin d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">Find stores</span></a>
                     </div>
-                    <div class="widget-text icon alt-font">
-                        <a href="https://www.instagram.com/" target="_blank"><i class="feather icon-feather-instagram d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">100k Followers</span></a>
-                    </div>
+{{--                    <div class="widget-text icon alt-font">--}}
+{{--                        <a href="https://www.instagram.com/" target="_blank"><i class="feather icon-feather-instagram d-inline-block me-5px"></i><span class="d-none d-xxl-inline-block">100k Followers</span></a>--}}
+{{--                    </div>--}}
                 </div>
                 <a class="navbar-brand" href="{{ route('home.index') }}">
                     <img src="{{asset('assets/image/logo.webp')}}" data-at2x="{{asset('assets/image/logo.webp')}}" style="transform:scale(3)" class="default-logo">
@@ -74,7 +67,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('home.best')}}" class="nav-link">Լավագույն</a>
+                            <a href="{{route('home.best')}}" class="nav-link">TOP վաճառք</a>
 
                         </li>
                     </ul>
@@ -82,8 +75,8 @@
                         <li class="nav-item">
                             <a href="{{route('home.hot')}}" class="nav-link">Թեժ առաջարկ</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{route('home.news')}}" class="nav-link">Նոր</a>
+                        <li class="nav-item ">
+                            <a href="{{route('home.news')}}" class="nav-link ">NEW</a>
                         </li>
 
                     </ul>
@@ -153,13 +146,13 @@
 <div class="sticky-wrap z-index-1 d-none d-xl-inline-block" data-animation-delay="100" data-shadow-animation="true">
     <div class="elements-social social-icon-style-10">
         <ul class="fs-16">
-            <li class="me-30px"><a class="facebook" href="https://www.facebook.com/" target="_blank">
+            <li class="me-30px"><a class="facebook" href="https://www.facebook.com/BidMardStore" target="_blank">
                     <i class="fa-brands fa-facebook-f me-10px"></i>
                     <span class="alt-font">Facebook</span>
                 </a>
             </li>
             <li>
-                <a class="instagram" href="http://www.instagram.com" target="_blank">
+                <a class="instagram" href="https://www.instagram.com/bigmardstore/" target="_blank">
                     <i class="fa-brands fa-instagram me-10px"></i>
                     <span class="alt-font">Instagram</span>
                 </a>

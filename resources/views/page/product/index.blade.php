@@ -47,7 +47,7 @@
                     <ul>
                         <li><a href="{{route('home.index')}}">Գլխավոր</a></li>
                         <li><a href="{{route('store.Shop',$category->slug)}}">{{$category->name}}</a></li>
-                        <li>Relaxed corduroy shirt</li>
+                        <li>{{$item->name}}</li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +93,6 @@
                 </div>
 
                 <div class="col-12 col-lg-5 product-info">
-                    <span class="fw-500 text-dark-gray d-block">Zalando</span>
                     <h4 class="alt-font text-dark-gray fw-500 mb-5px">{{$item->name}}</h5>
                         <div class="d-block d-sm-flex align-items-center mb-15px">
                             <div class="me-10px xs-me-0">
@@ -105,8 +104,8 @@
                                     <i class="bi bi-star-fill text-golden-yellow"></i>
                                 </a>
                             </div>
-                            <a href="#tab" class="me-25px text-dark-gray fw-500 section-link xs-me-0">{{$feedbacks->count()}} Reviews</a>
-                            <div><span class="text-dark-gray fw-500">SKU: </span>M4923{{$item->id}}</div>
+                            <a href="#tab" class="me-25px text-dark-gray fw-500 section-link xs-me-0">{{$feedbacks->count()}} կարծիք</a>
+                            <div><span class="text-dark-gray fw-500">Արտիկուլ: </span>M4923{{$item->id}}</div>
                         </div>
                         <div class="product-price mb-10px">
                             <span class="text-dark-gray fs-28 xs-fs-24 fw-700 ls-minus-1px">
@@ -133,7 +132,7 @@
                                class="btn btn-cart btn-extra-large btn-switch-text btn-box-shadow btn-none-transform btn-dark-gray left-icon btn-round-edge border-0 me-15px xs-me-0 order-3 order-sm-2">
                                     <span>
                                         <span><i class="feather icon-feather-shopping-bag"></i></span>
-                                        <span class="btn-double-text ls-0px" data-text="Պատվիրել">Պատվիրել Հիմա</span>
+                                        <span class="btn-double-text ls-0px" data-text="Պատվիրել">Պատվիրել հիմա</span>
                                     </span>
                             </button>
                             <a href="#"
@@ -150,7 +149,7 @@
                                         <i class="feather icon-feather-truck top-8px position-relative align-middle text-dark-gray"></i>
                                     </div>
                                     <div class="feature-box-content">
-                                        <span><span class="alt-font text-dark-gray fw-500">Estimated delivery:</span> March 03 - March 07</span>
+                                        <span><span class="alt-font text-dark-gray fw-500">Անվճար առաքում</span> ք․Երևան</span>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +160,7 @@
                                     </div>
                                     <div class="feature-box-content">
                                         <span><span
-                                                class="alt-font text-dark-gray fw-500">Free shipping & returns:</span> On all orders over $50</span>
+                                                class="alt-font text-dark-gray fw-500">Երաշխիք 15 օր </span></span>
                                     </div>
                                 </div>
                             </div>
@@ -195,9 +194,7 @@
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-lg-6 md-mb-40px">
                                     <div class="d-flex align-items-center mb-5px">
-                                        <div class="col-auto pe-5px"><i class="bi bi-heart-fill text-red fs-16"></i>
-                                        </div>
-                                        <div class="col alt-font fw-500 text-dark-gray">Նկարագրություն</div>
+
                                     </div>
 
                                    {!! $item->description !!}
@@ -343,7 +340,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Նախընտրելի <span class="text-highlight fw-600">Ապրանքներ<span
+                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Նախընտրելի <span class="text-highlight fw-600">ապրանքներ<span
                                 class="bg-base-color h-5px bottom-2px"></span></span></h2>
                 </div>
             </div>
@@ -365,7 +362,7 @@
                                         </a>
                                         <div class="shop-buttons-wrap">
                                             <a href="{{route('store.product',$product->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add to cart</span>
+                                                <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Պատվիրել</span>
                                             </a>
                                         </div>
                                         <div class="shop-hover d-flex justify-content-center">

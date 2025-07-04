@@ -78,7 +78,7 @@
                                     </a>
                                     <div class="shop-buttons-wrap">
                                         <a href="{{route('store.product',$product->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Պատվիրել Հիմա</span>
+                                            <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Պատվիրել հիմա</span>
                                         </a>
                                     </div>
                                     <div class="shop-hover d-flex justify-content-center">
