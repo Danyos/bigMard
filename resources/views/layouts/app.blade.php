@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
+    <meta name="description" content="BigMard Armenia">
     <!-- favicon icon -->
     <link rel="shortcut icon" href="{{asset('assets/image/logo.webp')}}">
     <link rel="apple-touch-icon" href="{{asset('assets/image/logo.webp')}}">
