@@ -10,10 +10,10 @@
 
     <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="{{asset('assets/image/logo.webp')}}">
+    <link rel="apple-touch-icon" href="{{asset('assets/image/logo.webp')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('assets/image/logo.webp')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('assets/image/logo.webp')}}">
     <!-- google fonts preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +85,7 @@
             <div class="col-auto col-xxl-3 col-lg-2 text-end">
                 <div class="header-icon">
                     <div class="header-search-icon icon alt-font">
-                        <a href="javascript:void(0)" class="search-form-icon header-search-form"><i class="feather icon-feather-search me-5px"></i><span class="d-none d-xxl-inline-block">Search</span></a>
+{{--                        <a href="javascript:void(0)" class="search-form-icon header-search-form"><i class="feather icon-feather-search me-5px"></i><span class="d-none d-xxl-inline-block">Search</span></a>--}}
                         <div class="search-form-wrapper">
                             <button title="Close" type="button" class="search-close alt-font">×</button>
                             <form id="search-form" role="search" method="get" class="search-form text-left" action="search-result.html">

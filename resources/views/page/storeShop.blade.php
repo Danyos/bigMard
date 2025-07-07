@@ -106,34 +106,34 @@
                                     <div class="shop-filter new-arribals">
                                         <div class="d-flex align-items-center mb-20px">
                                             <figure class="mb-0">
-                                                <a href="demo-fashion-store-single-product.html">
+                                                <a href="#">
                                                     <img class="border-radius-4px w-80px" src="https://via.placeholder.com/600x765" alt="">
                                                 </a>
                                             </figure>
                                             <div class="col ps-25px">
-                                                <a href="demo-fashion-store-single-product.html" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Textured sweater</a>
+                                                <a href="#" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Textured sweater</a>
                                                 <div class="fs-15 lh-normal"><del class="me-5px">$30.00</del>$23.00</div>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center mb-20px">
                                             <figure class="mb-0">
-                                                <a href="demo-fashion-store-single-product.html">
+                                                <a href="#">
                                                     <img class="border-radius-4px w-80px" src="https://via.placeholder.com/600x765" alt="">
                                                 </a>
                                             </figure>
                                             <div class="col ps-25px">
-                                                <a href="demo-fashion-store-single-product.html" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Traveller shirt</a>
+                                                <a href="#" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Traveller shirt</a>
                                                 <div class="fs-15 lh-normal"><del class="me-5px">$50.00</del>$43.00</div>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <figure class="mb-0">
-                                                <a href="demo-fashion-store-single-product.html">
+                                                <a href="#">
                                                     <img class="border-radius-4px w-80px" src="https://via.placeholder.com/600x765" alt="">
                                                 </a>
                                             </figure>
                                             <div class="col ps-25px">
-                                                <a href="demo-fashion-store-single-product.html" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Crewneck tshirt</a>
+                                                <a href="#" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Crewneck tshirt</a>
                                                 <div class="fs-15 lh-normal"><del class="me-5px">$20.00</del>$15.00</div>
                                             </div>
                                         </div>
@@ -145,34 +145,34 @@
                                     <div class="shop-filter new-arribals">
                                         <div class="d-flex align-items-center mb-20px">
                                             <figure class="mb-0">
-                                                <a href="demo-fashion-store-single-product.html">
+                                                <a href="#">
                                                     <img class="border-radius-4px w-80px" src="https://via.placeholder.com/600x765" alt="">
                                                 </a>
                                             </figure>
                                             <div class="col ps-25px">
-                                                <a href="demo-fashion-store-single-product.html" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Skinny trousers</a>
+                                                <a href="#" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Skinny trousers</a>
                                                 <div class="fs-15 lh-normal"><del class="me-5px">$15.00</del>$10.00</div>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center mb-20px">
                                             <figure class="mb-0">
-                                                <a href="demo-fashion-store-single-product.html">
+                                                <a href="#">
                                                     <img class="border-radius-4px w-80px" src="https://via.placeholder.com/600x765" alt="">
                                                 </a>
                                             </figure>
                                             <div class="col ps-25px">
-                                                <a href="demo-fashion-store-single-product.html" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Sleeve sweater</a>
+                                                <a href="#" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Sleeve sweater</a>
                                                 <div class="fs-15 lh-normal"><del class="me-5px">$35.00</del>$30.00</div>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <figure class="mb-0">
-                                                <a href="demo-fashion-store-single-product.html">
+                                                <a href="#">
                                                     <img class="border-radius-4px w-80px" src="https://via.placeholder.com/600x765" alt="">
                                                 </a>
                                             </figure>
                                             <div class="col ps-25px">
-                                                <a href="demo-fashion-store-single-product.html" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Pocket white</a>
+                                                <a href="#" class="text-dark-gray alt-font fw-500 d-inline-block lh-normal">Pocket white</a>
                                                 <div class="fs-15 lh-normal"><del class="me-5px">$20.00</del>$15.00</div>
                                             </div>
                                         </div>

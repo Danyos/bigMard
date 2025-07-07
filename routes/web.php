@@ -22,25 +22,26 @@ Route::get('/clear', function() {
 });
 // web.php
 
-Route::get('/page-password', function (Illuminate\Http\Request $request) {
-    $redirect = $request->query('redirect', '/');
-    return view('page-password', compact('redirect'));
-})->name('page.password.form');
+//Route::get('/page-password', function (Illuminate\Http\Request $request) {
+//    $redirect = $request->query('redirect', '/');
+//    return view('page-password', compact('redirect'));
+//})->name('page.password.form');
+//
+//Route::post('/page-password', function (Illuminate\Http\Request $request) {
+//    $password = $request->input('password');
+//    $redirect = $request->input('redirect', '/');
+//    // Տեղդիր քո գաղտնաբառը
+//    $realPassword = 'd98657545';
+//
+//    if ($password === $realPassword) {
+//        session(['page_password_verified' => true]);
+//        session(['page_password_verified_at' => now()]);
+//        return redirect('/' . ltrim($redirect, '/'));
+//    }
+//    return back()->withErrors(['password' => 'Սխալ գաղտնաբառ']);
+//})->name('page.password.check');
 
-Route::post('/page-password', function (Illuminate\Http\Request $request) {
-    $password = $request->input('password');
-    $redirect = $request->input('redirect', '/');
-    // Տեղդիր քո գաղտնաբառը
-    $realPassword = 'd98657545';
-
-    if ($password === $realPassword) {
-        session(['page_password_verified' => true]);
-        session(['page_password_verified_at' => now()]);
-        return redirect('/' . ltrim($redirect, '/'));
-    }
-    return back()->withErrors(['password' => 'Սխալ գաղտնաբառ']);
-})->name('page.password.check');
-Route::middleware(['pagepassword'])->group(function () {
+Route::group(['prefix' => '/'], function () {
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('home.index');
 Route::get('/best', [App\Http\Controllers\WelcomeController::class, 'best'])->name('home.best');
 Route::get('/news', [App\Http\Controllers\WelcomeController::class, 'news'])->name('home.news');

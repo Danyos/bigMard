@@ -62,46 +62,34 @@
                 <div class="col-xxl-10 col-lg-9 ps-5 md-ps-15px md-mb-60px">
                     <ul class="shop-modern shop-wrapper grid-loading grid grid-4col xl-grid-3col sm-grid-2col xs-grid-1col gutter-extra-large text-center" data-anime='{ "el": "childs", "translateY": [-15, 0], "opacity": [0,1], "duration": 300, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                         <li class="grid-sizer"></li>
-                        @foreach($items as $product)
+                        @foreach($items as $best)
 
 
                         <!-- start shop item -->
-                        <li class="grid-item">
-                            <div class="shop-box mb-10px">
-                                <div class="shop-image mb-20px">
-                                    <a href="{{route('store.product',$product->id)}}">
-                                        <img src="{{asset($product->OtherInformation->coverImages)}}" alt="">
-                                      @if($product->new==='active')
-                                        <span class="lable new">New</span>
-                                        @endif
+                            <li class="grid-item">
+                                <div class="shop-box mb-10px">
+                                    <div class="shop-image mb-20px">
+                                        <a href="{{route('store.product',$best->id)}}">
+                                            <img src="{{asset($best->OtherInformation->coverImages)}}" alt="">
+                                            @if($best->new==='active')
+                                                <span class="lable new">New</span>
+                                            @endif
                                             <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                    </a>
-                                    <div class="shop-buttons-wrap">
-                                        <a href="{{route('store.product',$product->id)}}" class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                            <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Պատվիրել հիմա</span>
                                         </a>
+
                                     </div>
-                                    <div class="shop-hover d-flex justify-content-center">
-                                        <ul>
-                                            <li>
-                                                <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="feather icon-feather-heart fs-16"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px" data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i class="feather icon-feather-eye fs-16"></i></a>
-                                            </li>
-                                        </ul>
+                                    <div class="shop-footer text-center">
+                                        <a href="{{route('store.product',$best->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$best->name}}</a>
+                                        <div class="price lh-22 fs-16"><del>{{$best->price}} դրամ</del>{{$best->price-($best->price*$best->discount)/100}} դրամ</div>
                                     </div>
-                                    <div class="auction-timer-wrapper" id="timer-{{ $product->id }}" data-end-time="{{ \Carbon\Carbon::parse($product->auction_end_time)->format('Y-m-d H:i:s') }}">
+                                    <div class="auction-timer-wrapper" id="timer-{{ $best->id }}" data-end-time="{{ \Carbon\Carbon::parse($best->auction_end_time)->format('Y-m-d H:i:s') }}">
                                         <div class="timer-box bg-danger text-white">01 օ․</div>
                                         <div class="timer-box bg-warning text-dark">06 ժ․</div>
                                         <div class="timer-box bg-info text-dark">50 ր․</div>
                                         <div class="timer-box bg-success text-white">42 վ․</div>
-                                    </div>                                <div class="shop-footer text-center">
-                                    <a href="{{route('store.product',$product->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$product->name}}</a>
-                                    <div class="price lh-22 fs-16"><del>{{$product->price}} դրամ</del>{{$product->price-($product->price*$product->discount)/100}} դրամ</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
                         <!-- end shop item -->
                         @endforeach
 

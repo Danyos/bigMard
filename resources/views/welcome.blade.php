@@ -266,39 +266,7 @@
         <div class="fs-180 lg-fs-150 md-fs-130 fw-700 position-absolute bottom-minus-50px md-bottom-minus-40px ls-minus-5px left-0px right-0px text-center w-100 opacity-1 d-none d-md-block"  data-bottom-top="transform:scale(1, 1) translate3d(0px, 0px, 0px);" data-top-bottom="transform:scale(1, 1) translate3d(-100px, 0px, 0px);">new collection</div>
     </section>
     <!-- end section -->
-    <!-- start section -->
-    <section class="half-section border-bottom border-color-extra-medium-gray">
-        <div class="container">
-            <div class="row row-cols-2 row-cols-md-5 row-cols-sm-3 position-relative justify-content-center" data-anime='{ "el": "childs", "translateY": [-15, 0], "scale": [0.8, 1], "opacity": [0,1], "duration": 300, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'>
-                <!-- start client item -->
-                <div class="col text-center sm-mb-30px">
-                    <a href="#"><img src="images/logo-asos.svg" class="h-30px" alt="" /></a>
-                </div>
-                <!-- end client item -->
-                <!-- start client item -->
-                <div class="col text-center sm-mb-30px">
-                    <a href="#"><img src="images/logo-chanel.svg" class="h-30px" alt="" /></a>
-                </div>
-                <!-- end client item -->
-                <!-- start client item -->
-                <div class="col text-center sm-mb-30px">
-                    <a href="#"><img src="images/logo-gucci.svg" class="h-30px" alt="" /></a>
-                </div>
-                <!-- end client item -->
-                <!-- start client item -->
-                <div class="col text-center xs-mb-30px">
-                    <a href="#"><img src="images/logo-celine.svg" class="h-30px" alt="" /></a>
-                </div>
-                <!-- end client item -->
-                <!-- start client item -->
-                <div class="col text-center">
-                    <a href="#"><img src="images/logo-adidas.svg" class="h-30px" alt="" /></a>
-                </div>
-                <!-- end client item -->
-            </div>
-        </div>
-    </section>
-    <!-- end section -->
+  
 
     <!-- start section -->
     <section class="p-0 border-top border-bottom border-color-extra-medium-gray">
@@ -308,44 +276,45 @@
                     <div class="swiper-wrapper marquee-slide">
                         <!-- start client item -->
                         <div class="swiper-slide">
-                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Get 20% off for your first order</div>
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Անվճար առաքում</div>
                         </div>
                         <!-- end client item -->
-                        <!-- start client item -->
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Երաշխիք 15օր և գումարի վերադարձ</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Երաշխավորված որակ</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Առցանց կապ 24/7</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Գնված ապրանքների TOP</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Շտապեք կատարել գնումներ մեծ զեղչերի ժամանակ</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Նորություններ ամեն օր</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Վճարեք ցանկացած ձև</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Առաքում ամբողջ ՀՀ տարածքով</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Get 20% off for your first order</div>
+                        </div>
                         <div class="swiper-slide">
                             <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">The fashion core collection</div>
                         </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
                         <div class="swiper-slide">
                             <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">100% secure protected payment</div>
                         </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
                         <div class="swiper-slide">
                             <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Free shipping for orders over $130</div>
                         </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Pay with multiple credit cards</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">Get 20% off for your first order</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">The fashion core collection</div>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <div class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">100% secure protected payment</div>
-                        </div>
-                        <!-- end client item -->
                     </div>
                 </div>
             </div>
