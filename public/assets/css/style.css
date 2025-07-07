@@ -18582,7 +18582,7 @@ canvas {
 }
 
 .shop-image {
-    height: 220px; /* կամ քեզ հարմար որևէ ֆիքսված բարձրություն */
+    height: 255px; /* կամ քեզ հարմար որևէ ֆիքսված բարձրություն */
     display: flex;
     align-items: center;
     justify-content: center;
