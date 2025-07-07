@@ -189,7 +189,7 @@
                                 <div class="shop-box mb-10px">
                                     <div class="shop-image mb-20px">
                                         <a href="{{route('store.product',$allItem->id)}}">
-                                            <img src="{{asset($allItem->OtherInformation->coverImages)}}" style="width: 100%;height: 275px;object-fit: cover">
+                                            <img src="{{asset($allItem->OtherInformation->coverImages)}}">
                                             <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                         </a>
 
