@@ -6830,6 +6830,7 @@ header .navbar [class*=col-] .navbar-nav .nav-item a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+    white-space: nowrap;
 }
 header .container-fluid {
   padding-left: 45px;
@@ -18573,6 +18574,28 @@ canvas {
   color: var(--dark-gray);
   width: 100%;
 }
+.shop-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Քարտի ընդհանուր բարձրությունը հավասարեցնելու համար */
+    justify-content: space-between;
+}
+
+.shop-image {
+    height: 220px; /* կամ քեզ հարմար որևէ ֆիքսված բարձրություն */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.shop-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* կամ object-fit: cover; եթե ուզում ես որ միշտ լրացնի տարածքը */
+}
+
 .categories-style-01:hover .count-circle {
   opacity: 1;
   -webkit-transform: scale(1.1);

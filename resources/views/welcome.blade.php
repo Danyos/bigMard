@@ -16,9 +16,7 @@
                                     <div class="alt-font fs-120 xs-fs-95 lh-100 mb-40px text-dark-gray fw-600 transform-origin-right ls-minus-5px sm-mb-25px" data-anime='{ "el": "childs", "rotateX": [90, 0], "opacity": [0,1], "staggervalue": 150, "easing": "easeOutQuad" }'>
                                         <span class="d-block fw-300">{{$slider->description}}</span>
                                     </div>
-                                    <div data-anime='{ "opacity": [0, 1], "translateY": [100, 0], "easing": "easeOutQuad", "duration": 800, "delay": 400 }'>
-                                        <a href="demo-fashion-store-shop.html" class="btn btn-dark-gray btn-box-shadow btn-large">Դիտել</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -191,14 +189,14 @@
                                 <div class="shop-box mb-10px">
                                     <div class="shop-image mb-20px">
                                         <a href="{{route('store.product',$allItem->id)}}">
-                                            <img src="{{asset($allItem->OtherInformation->coverImages)}}" width="100%">
+                                            <img src="{{asset($allItem->OtherInformation->coverImages)}}" style="width: 100%;height: 275px;object-fit: cover">
                                             <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
                                         </a>
 
 
                                     </div>
                                     <div class="shop-footer text-center">
-                                        <a href="{{route('store.product',$allItem->id)}}" class="alt-font text-dark-gray fs-19 fw-500">{{$allItem->id }}  {{$allItem->name}}</a>
+                                        <a href="{{route('store.product',$allItem->id)}}" class="alt-font text-dark-gray fs-19 fw-500">  {{$allItem->name}}</a>
                                         <div class="price lh-22 fs-16"><del>{{$allItem->price}} դրամ</del>{{$allItem->price-($allItem->price*$allItem->discount)/100}} դրամ</div>
                                     </div>
                                 </div>

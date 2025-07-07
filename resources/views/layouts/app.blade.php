@@ -116,7 +116,7 @@
             <div class="row align-items-center fs-15">
 
                 <div class="col-12 col-lg-5 text-center text-lg-end lh-22">
-                    <span>&copy; 2025 Bigmard <a href="https://bigmard.am/" target="_blank" class="text-decoration-line-bottom text-white">DVcoding</a></span>
+                    <span>&copy; 2025  <a href="https://bigmard.am/" class="text-decoration-line-bottom text-white">Bigmard</a></span>
                 </div>
             </div>
         </div>

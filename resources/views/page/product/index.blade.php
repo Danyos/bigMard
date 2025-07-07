@@ -191,7 +191,7 @@
                     <div class="tab-content">
                         <!-- start tab content -->
                         <div class="tab-pane fade in active show" id="tab_five1">
-                            <div class="row align-items-center justify-content-center">
+                            <div class="row  justify-content-center">
                                 <div class="col-lg-6 md-mb-40px">
                                     <div class="d-flex align-items-center mb-5px">
 
@@ -230,8 +230,59 @@
                         <!-- end tab content -->
                         <!-- start tab content -->
                         <div class="tab-pane fade in" id="tab_five3">
-                            <div class="row"><div class="col-12 col-md-6 last-paragraph-no-margin sm-mb-30px"><div class="alt-font fs-22 text-dark-gray mb-15px fw-500">Առաքման տեղեկատվություն</div><p class="mb-0"><span class="fw-500 text-dark-gray">Ստանդարտ առաքում </span>Պատվերները կառաքվեն ք. Երևան 1-2 ժամվա ընթացքում։</p><p class=""><span class="fw-500 text-dark-gray">Էքսպրես առաքում </span>Պատվերները կառաքվեն ք. Երևան 15-40 րոպեի ընթացքում։</p><p class=""><span class="fw-500 text-dark-gray">Առաքում մարզեր </span>Առաքում ՀՀ մարզեր՝ ՀայՓոստի միջոցով 24 ժամվա ընթացքում։</p><p class=""><span class="fw-500 text-dark-gray">Խանութից վերցնելու տարբերակ </span>Դուք կարող եք վերցնել պատվերը մեր խանութից։</p><p class="">Առաքման վճարները կախված են տարբերակից, հասցեից և պատվերի չափից։ Վճարումները տեսանելի են հաստատումից առաջ։ Առաքում կատարվում է միայն ՀՀ տարածքում, աշխատանքային ժամերին՝ 10:00-ից 21:00։</p><p class="">Պատվերից հետո կստանաք հաստատման նամակ, որտեղ կտեսնեք հետևման կոդ։ Ստանալուց հետո ստուգեք փաթեթը և խնդիրների դեպքում կապվեք մեր աջակցության թիմի հետ։</p></div><div class="col-12 col-md-6 last-paragraph-no-margin"><div class="alt-font fs-22 text-dark-gray mb-15px fw-500">Վերադարձի տեղեկատվություն</div><p class="w-80 md-w-100">Առցանց վճարումները վերադարձվում են մեր վերադարձման քաղաքականության համաձայն։</p><p class="w-80 md-w-100">Խնդրում ենք կապ հաստատել 033 934 040 հեռախոսահամարով՝ վերադարձման պայմանները ճշտելու համար։</p></div></div>
+                            <div class="row">
+                                <!-- Առաքման տեղեկատվություն -->
+                                <div class="col-12 col-md-6 last-paragraph-no-margin sm-mb-30px">
+                                    <div class="alt-font fs-22 text-dark-gray mb-15px fw-500">Առաքման տեղեկատվություն</div>
+                                    <p class="mb-0">
+                                        <span class="fw-500 text-dark-gray">Ստանդարտ առաքում </span>
+                                        Պատվերները առաքվում են ք. Երևանում 1-2 ժամվա ընթացքում։
+                                    </p>
+                                    <p>
+                                        <span class="fw-500 text-dark-gray">Էքսպրես առաքում </span>
+                                        Պատվերները առաքվում են ք. Երևանում 15-40 րոպեի ընթացքում։
+                                    </p>
+                                    <p>
+                                        <span class="fw-500 text-dark-gray">Առաքում մարզեր </span>
+                                        Պատվերները առաքվում են ՀՀ մարզեր՝ ՀայՓոստի միջոցով 24 ժամվա ընթացքում։
+                                    </p>
+                                    <p>
+                                        <span class="fw-500 text-dark-gray">Անվճար առաքում </span>
+                                        Անվճար առաքումը կատարվում է միայն ք․Երևան, Կենտրոն համայնքում։
+                                    </p>
+                                    <p>
+                                        Առաքման վճարումները կախված են ըստ հասցեի և պատվերի չափից։
+                                    </p>
+                                    <p>
+                                        Առաքում կատարվում է միայն ՀՀ տարածքում, աշխատանքային ժամերին՝ 10:00-ից 21:00։
+                                    </p>
+                                    <p>
+                                        Պատվիրելուց հետո կստանաք հաստատման նամակ, որտեղ կտեսնեք հետևման կոդ։ Պատվերը ստանալու ժամանակ ստուգեք ապրանքը և խնդիրների դեպքում կապվեք մեր աջակցության թիմի հետ։
+                                    </p>
+                                </div>
+                                <!-- Վերադարձի տեղեկատվություն -->
+                                <div class="col-12 col-md-6 last-paragraph-no-margin">
+                                    <div class="alt-font fs-22 text-dark-gray mb-15px fw-500">Վերադարձի տեղեկատվություն</div>
+                                    <p class="w-80 md-w-100">
+                                        <span class="fw-500 text-dark-gray">Խոտանված ապրանքները </span>
+                                        կարող եք վերադարձնել նույն օրը։
+                                    </p>
+                                    <p class="w-80 md-w-100">
+                                        Ուղղակի վերադարձ, իրականացվում է գնորդի միջոցներով։
+                                    </p>
+                                    <p class="w-80 md-w-100">
+                                        Գումարը վերադարձվում է 1-2 աշխատանքային օրվա ընթացքում։
+                                    </p>
+                                    <p class="w-80 md-w-100">
+                                        Բոլոր ապրանքները ստուգված են և անցել են սերտիֆիկացիա։
+                                    </p>
+                                    <p class="w-80 md-w-100">
+                                        Խնդրում ենք կապ հաստատել <a href="tel:033934040">033 934 040</a> հեռախոսահամարով վերադարձման պայմանները ճշտելու համար։
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+
                         <!-- end tab content -->
                         <!-- start tab content -->
                         <div class="tab-pane fade in" id="tab_five4">
